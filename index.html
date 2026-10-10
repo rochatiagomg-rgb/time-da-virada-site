@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time da Virada</title>
+  <meta name="description" content="Time da Virada — site em preparação.">
+  <style>
+    :root {
+      --verde: #006b3c;
+      --amarelo: #f6b800;
+      --vermelho: #d71920;
+      --texto: #17352a;
+      --fundo: #fffdf7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+    }
+    main {
+      width: min(92vw, 760px);
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .marca {
+      font-weight: 900;
+      font-size: clamp(2.6rem, 8vw, 5.5rem);
+      line-height: .92;
+      letter-spacing: -0.05em;
+      margin: 0 0 22px;
+    }
+    .verde { color: var(--verde); }
+    .amarelo { color: var(--amarelo); }
+    .estrela { color: var(--vermelho); }
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.55;
+      margin: 0 auto;
+      max-width: 560px;
+    }
+    .linha {
+      width: 150px;
+      height: 8px;
+      border-radius: 99px;
+      margin: 28px auto;
+      background: linear-gradient(90deg,
+        var(--verde) 0 40%,
+        var(--amarelo) 40% 70%,
+        var(--vermelho) 70% 100%);
+    }
+    small {
+      display: block;
+      margin-top: 32px;
+      opacity: .68;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 class="marca">
+      <span class="verde">TIME DA</span><br>
+      <span class="verde">VIRA</span><span class="amarelo">DA</span>
+      <span class="estrela">★</span>
+    </h1>
+    <div class="linha" aria-hidden="true"></div>
+    <p>O novo site está sendo preparado. A versão completa será publicada aqui em breve.</p>
+    <small>timedavirada.app.br</small>
+  </main>
+</body>
+</html>
