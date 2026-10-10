@@ -1,0 +1,22 @@
+{
+  "app": {
+    "nome": "Time da Virada",
+    "versao": "cloudflare-migration-preview",
+    "slogan": "Nós somos o time da virada, nós somos o time do amor",
+    "credito": "Aplicativo desenvolvido por Tiago Rocha — Engenheiro e mestre pela UFMG",
+    "fonteRodape": "Fontes: TSE, IBGE e demais bases oficiais indicadas em cada card"
+  },
+  "secoes": {
+    "jogoAqui": "O jogo é aqui",
+    "placar": "Placar do primeiro tempo",
+    "leitura": "Leitura de jogo",
+    "onde": "Onde o jogo acontece",
+    "mapa": "Mapa de campo",
+    "prancheta": "Prancheta técnica",
+    "jogo": "O que está em jogo",
+    "retrospecto": "Retrospecto da partida",
+    "plano": "Plano de jogo",
+    "limites": "Riscos e limites"
+  },
+  "tseBaseUrl": "https://raw.githubusercontent.com/rochatiagomg-rgb/time-da-virada-dados/main"
+}

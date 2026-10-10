@@ -1,76 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Time da Virada</title>
-  <meta name="description" content="Time da Virada — site em preparação.">
-  <style>
-    :root {
-      --verde: #006b3c;
-      --amarelo: #f6b800;
-      --vermelho: #d71920;
-      --texto: #17352a;
-      --fundo: #fffdf7;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-    }
-    main {
-      width: min(92vw, 760px);
-      text-align: center;
-      padding: 48px 24px;
-    }
-    .marca {
-      font-weight: 900;
-      font-size: clamp(2.6rem, 8vw, 5.5rem);
-      line-height: .92;
-      letter-spacing: -0.05em;
-      margin: 0 0 22px;
-    }
-    .verde { color: var(--verde); }
-    .amarelo { color: var(--amarelo); }
-    .estrela { color: var(--vermelho); }
-    p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      line-height: 1.55;
-      margin: 0 auto;
-      max-width: 560px;
-    }
-    .linha {
-      width: 150px;
-      height: 8px;
-      border-radius: 99px;
-      margin: 28px auto;
-      background: linear-gradient(90deg,
-        var(--verde) 0 40%,
-        var(--amarelo) 40% 70%,
-        var(--vermelho) 70% 100%);
-    }
-    small {
-      display: block;
-      margin-top: 32px;
-      opacity: .68;
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <main>
-    <h1 class="marca">
-      <span class="verde">TIME DA</span><br>
-      <span class="verde">VIRA</span><span class="amarelo">DA</span>
-      <span class="estrela">★</span>
-    </h1>
-    <div class="linha" aria-hidden="true"></div>
-    <p>O novo site está sendo preparado. A versão completa será publicada aqui em breve.</p>
-    <small>timedavirada.app.br</small>
+  <div id="loading" class="loading show">
+    <div class="spinner"></div>
+    <strong id="loadingText">Carregando...</strong>
+  </div>
+
+  <header class="topbar">
+    <div class="logo-wrap">
+      <div class="logo-hat" aria-hidden="true">
+        <svg viewBox="0 0 130 72">
+          <ellipse cx="65" cy="52" rx="58" ry="15" fill="#F2D39B"/>
+          <path d="M35 48 C38 26,44 9,65 8 C86 9,92 26,95 48 Z" fill="#F6DEAA"/>
+          <path d="M38 40 C55 45,77 45,93 40 L95 48 C78 53,54 53,35 48 Z" fill="#151515"/>
+          <path d="M45 18 C58 13,74 13,86 19" stroke="#E7C382" stroke-width="3" fill="none"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-title">TIME DA <span>VIRADA</span></div>
+        <div id="slogan" class="slogan">Nós somos o time da virada, nós somos o time do amor</div>
+      </div>
+      <div class="craques-mini">
+        <span>⭐</span>
+        <div><b id="craquesCount">0</b><small>craques</small></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="search-card no-export">
+      <div class="search-grid">
+        <div>
+          <div class="eyebrow">CONSULTA TERRITORIAL</div>
+          <h1>Qual é o município?</h1>
+          <div class="autocomplete">
+            <input id="municipioInput" type="text" placeholder="Comece a digitar o nome do município..." autocomplete="off">
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+          <p class="hint">A consulta reúne resultado eleitoral, locais de votação, mapa, diagnóstico, propostas e retrospecto.</p>
+        </div>
+        <div class="craques-card">
+          <div class="craques-star">⭐</div>
+          <div>
+            <strong id="craquesBig">0</strong>
+            <span>Número de craques que acessaram a plataforma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="content" class="stack hidden">
+      <section class="section-card hero-card">
+        <div class="section-heading">
+          <div><div class="eyebrow">TERRITÓRIO</div><h2 id="secJogo">O jogo é aqui</h2></div>
+          <span class="pill" id="localTag"></span>
+        </div>
+        <h3 id="municipioNome" class="municipio-title"></h3>
+        <p id="municipioResumo" class="muted">Carregando leitura territorial...</p>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">RESULTADO</div><h2 id="secPlacar">Placar do primeiro tempo</h2></div></div>
+        <div id="placarContent" class="empty-state">Aguardando resultado do TSE.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">LOCAIS DE VOTAÇÃO</div><h2 id="secOnde">Onde o jogo acontece</h2></div></div>
+        <div id="locaisContent" class="empty-state">Aguardando locais de votação.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">MAPA</div><h2 id="secMapa">Mapa de campo</h2></div></div>
+        <div id="miniMap" class="field-map"><div class="map-placeholder">Carregando mapa...</div></div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">DIAGNÓSTICO</div><h2 id="secLeitura">Leitura de jogo</h2></div></div>
+        <div id="indicadoresResumo" class="indicator-strip"></div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">DADOS DO MUNICÍPIO</div><h2 id="secPrancheta">Prancheta técnica</h2></div></div>
+        <div id="cardsContent" class="empty-state">Aguardando indicadores temáticos.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">HISTÓRICO NACIONAL</div><h2 id="secRetrospecto">Retrospecto da partida</h2></div></div>
+        <div id="retrospectoContent" class="empty-state">Preencha GOL_BOLA_MURCHA para os cards aparecerem aqui.</div>
+        <button id="retroMoreBtn" class="secondary-button hidden no-export" type="button">Ver mais</button>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">SEGUNDO TURNO</div><h2 id="secJogoPolitico">O que está em jogo</h2></div></div>
+        <div id="planosContent"></div>
+        <button id="outrosTemasBtn" class="secondary-button hidden no-export" type="button">Ver todas as propostas</button>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">SÍNTESE</div><h2 id="secPlano">Plano de jogo</h2></div></div>
+        <div id="planoJogoCards" class="game-plan-grid"></div>
+        <div class="export-actions no-export">
+          <button id="downloadPdfBtn" class="primary-button" type="button">Baixar resumo em PDF</button>
+          <button id="sharePdfBtn" class="secondary-button inline-button" type="button">Enviar PDF / WhatsApp</button>
+        </div>
+        <p class="export-hint no-export">No PDF, os locais de votação entram somente se estiverem abertos na tela.</p>
+      </section>
+
+      <section class="section-card subtle">
+        <div class="section-heading"><div><div class="eyebrow">MÉTODO</div><h2 id="secLimites">Riscos e limites</h2></div></div>
+        <p class="muted">Resultados agregados descrevem municípios e locais de votação; não demonstram, por si só, mudança individual de voto ou causa de abstenção.</p>
+        <button class="link-button no-export" id="fontesBtn" type="button">Fontes e metodologia</button>
+        <div id="fontesContent" class="fontes hidden"></div>
+      </section>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div id="creditoApp">Aplicativo desenvolvido por Tiago Rocha — Engenheiro e mestre pela UFMG</div>
+    <div id="fonteRodape">Fontes: TSE, IBGE e demais bases oficiais indicadas em cada card</div>
+  </footer>
+
+  <script src="./api-adapter.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
