@@ -544,10 +544,11 @@ function openPlaceByCode(code){
 
 // -----------------------------------------------------------------------------
 // PROPOSTAS — seleção aleatória por assunto, com pareamento temático.
-// Regra: Flávio ancora o assunto. Lula tenta o mesmo subtema, depois o mesmo
-// tema e, só se não houver nada, entra com outra proposta para não deixar o
-// lado vazio. Quando Flávio não tem proposta correspondente, aparece apenas
-// "Bola murcha". Nunca mostramos "Sem proposta" para Lula.
+// Regra: só há pareamento quando as propostas pertencem ao mesmo subtema ou,
+// na falta dele, ao mesmo tema. Nunca cruzamos temas diferentes.
+// Proposta de Flávio sem correspondente de Lula aparece sozinha; proposta de
+// Lula sem correspondente de Flávio recebe "Bola murcha" no lado de Flávio.
+// Nunca mostramos "Sem proposta" para Lula.
 // -----------------------------------------------------------------------------
 function preparePlanos(groups){
   const lulas=[];
@@ -569,11 +570,12 @@ function preparePlanos(groups){
   const usedLula=new Set();
   const blocks=[];
 
-  // Cada proposta real de Flávio recebe a proposta de Lula mais próxima possível.
+  // Cada proposta real de Flávio só é pareada com Lula dentro do mesmo assunto.
+  // Se não houver correspondente, ela permanece visível sozinha — sem criar
+  // comparações artificiais entre temas diferentes.
   flavioPool.forEach(f=>{
     let lula=pickUnusedProposal(lulaPool,usedLula,x=>sameTemaSubtema(x,f));
     if(!lula) lula=pickUnusedProposal(lulaPool,usedLula,x=>sameTema(x,f));
-    if(!lula) lula=pickUnusedProposal(lulaPool,usedLula,()=>true);
     if(lula) usedLula.add(proposalKey(lula));
     blocks.push(makePlanBlock(lula,f));
   });
@@ -837,6 +839,7 @@ function retroCard(i){
       ? '<span class="status gol"><span class="ball"></span> GOL</span>'
       : '';
   const cls=status||'neutro';
+  const linksHtml=i.link?sourceLinksHtml(i.link,'Saiba mais'):'';
   return `<article class="retro ${cls}">
     <div class="proposal-head"><strong>${esc(i.governo||'')}</strong>${badge}</div>
     <div class="proposal-topic">${esc(i.tema||'Outros')}${i.subtema?` · ${esc(i.subtema)}`:''}</div>
@@ -844,7 +847,7 @@ function retroCard(i){
     <p>${esc(i.resumo||'')}</p>
     ${i.indicador?`<div class="source"><b>Indicador:</b> ${esc(i.indicador)}</div>`:''}
     ${i.fonte?`<div class="source"><b>Fonte:</b> ${esc(i.fonte)}</div>`:''}
-    ${i.link?`<div class="source"><a href="${escAttr(safeUrl(i.link))}" target="_blank" rel="noopener">Saiba mais</a></div>`:''}
+    ${linksHtml?`<div class="source">${linksHtml}</div>`:''}
   </article>`;
 }
 
@@ -1021,6 +1024,9 @@ async function renderPdfByBlocks(root){
     block.scrollIntoView({block:'nearest'});
     await waitAnimationFrames(1);
 
+    const blockRect=block.getBoundingClientRect();
+    const links=collectPdfLinks(block,blockRect);
+
     let canvas;
     try{
       canvas=await html2canvas(block,{
@@ -1048,14 +1054,25 @@ async function renderPdfByBlocks(root){
     hasAnything=true;
     const mmPerPx=usableW/canvas.width;
     const blockHmm=canvas.height*mmPerPx;
+    const scaleX=blockRect.width>0 ? canvas.width/blockRect.width : 1;
+    const scaleY=blockRect.height>0 ? canvas.height/blockRect.height : scaleX;
+    const canvasLinks=links.map(link=>({
+      url:link.url,
+      x:link.x*scaleX,
+      y:link.y*scaleY,
+      w:link.w*scaleX,
+      h:link.h*scaleY
+    }));
 
     if(blockHmm<=usableH){
       if(y>marginTop && y+blockHmm>pageH-marginBottom){
         pdf.addPage();
         y=marginTop;
       }
+      const blockY=y;
       const img=canvas.toDataURL('image/jpeg',0.94);
-      pdf.addImage(img,'JPEG',marginX,y,usableW,blockHmm,undefined,'FAST');
+      pdf.addImage(img,'JPEG',marginX,blockY,usableW,blockHmm,undefined,'FAST');
+      addPdfLinks(pdf,canvasLinks,marginX,blockY,mmPerPx,0,canvas.height);
       y+=blockHmm+gapMm;
       continue;
     }
@@ -1085,9 +1102,11 @@ async function renderPdfByBlocks(root){
       ctx.fillRect(0,0,piece.width,piece.height);
       ctx.drawImage(canvas,0,srcY,canvas.width,slicePx,0,0,canvas.width,slicePx);
 
+      const sliceY=y;
       const pieceHmm=slicePx*mmPerPx;
       const img=piece.toDataURL('image/jpeg',0.94);
-      pdf.addImage(img,'JPEG',marginX,y,usableW,pieceHmm,undefined,'FAST');
+      pdf.addImage(img,'JPEG',marginX,sliceY,usableW,pieceHmm,undefined,'FAST');
+      addPdfLinks(pdf,canvasLinks,marginX,sliceY,mmPerPx,srcY,srcY+slicePx);
       y+=pieceHmm;
       srcY+=slicePx;
 
@@ -1105,6 +1124,41 @@ async function renderPdfByBlocks(root){
   }
 
   return pdf.output('blob');
+}
+
+function collectPdfLinks(block,blockRect){
+  return [...block.querySelectorAll('a[href]')].map(a=>{
+    const url=String(a.href||'').trim();
+    if(!/^https?:\/\//i.test(url)) return null;
+    const r=a.getBoundingClientRect();
+    if(r.width<=0 || r.height<=0) return null;
+    return {
+      url:url,
+      x:r.left-blockRect.left,
+      y:r.top-blockRect.top,
+      w:r.width,
+      h:r.height
+    };
+  }).filter(Boolean);
+}
+
+function addPdfLinks(pdf,links,baseX,baseY,mmPerPx,sliceTopPx,sliceBottomPx){
+  links.forEach(link=>{
+    const top=Math.max(link.y,sliceTopPx);
+    const bottom=Math.min(link.y+link.h,sliceBottomPx);
+    if(bottom<=top) return;
+
+    const x=baseX+(link.x*mmPerPx);
+    const y=baseY+((top-sliceTopPx)*mmPerPx);
+    const w=Math.max(1.5,link.w*mmPerPx);
+    const h=Math.max(1.5,(bottom-top)*mmPerPx);
+
+    try{
+      pdf.link(x,y,w,h,{url:link.url});
+    }catch(err){
+      console.warn('Link não incorporado ao PDF:',link.url,err);
+    }
+  });
 }
 
 function canvasHasVisibleContent(canvas){
@@ -1155,7 +1209,35 @@ function waitForImages(node){
   return Promise.all(imgs.map(img=>img.complete?Promise.resolve():new Promise(r=>{img.onload=r;img.onerror=r;})));
 }
 function slug(v){return norm(v).replace(/\s+/g,'-')||'municipio'}
-function safeUrl(v){ const s=String(v||'').trim(); return /^https?:\/\//i.test(s)?s:'#'; }
+
+function normalizeHttpUrl(v){
+  const s=String(v||'').trim().replace(/[),.;]+$/,'');
+  if(!s) return '';
+  if(/^https?:\/\//i.test(s)) return s;
+  if(/^www\./i.test(s) || /^[a-z0-9.-]+\.[a-z]{2,}(?:\/[^\s]*)?$/i.test(s)) return 'https://'+s;
+  return '';
+}
+function extractHttpUrls(v){
+  const parts=String(v||'').split(/\s+\/\s+|[;,|]+/);
+  const seen=new Set();
+  const out=[];
+  parts.forEach(part=>{
+    const url=normalizeHttpUrl(part);
+    if(url && !seen.has(url)){ seen.add(url); out.push(url); }
+  });
+  return out;
+}
+function safeUrl(v){
+  const urls=extractHttpUrls(v);
+  return urls.length?urls[0]:'#';
+}
+function sourceLinksHtml(v,label){
+  const urls=extractHttpUrls(v);
+  return urls.map((url,idx)=>{
+    const text=urls.length>1?`${label} ${idx+1}`:label;
+    return `<a href="${escAttr(url)}" target="_blank" rel="noopener">${esc(text)}</a>`;
+  }).join(' · ');
+}
 
 function renderFontes(items){
   $('fontesContent').innerHTML=items.map(f=>`<div class="fonte-item"><b>${esc(f.orgao)} — ${esc(f.nome)}</b><br>${esc(f.uso||'')}${f.link?` · <a href="${escAttr(safeUrl(f.link))}" target="_blank" rel="noopener">abrir fonte</a>`:''}</div>`).join('');
