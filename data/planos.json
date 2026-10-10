@@ -1,1 +1,1514 @@
-[]
+[
+  {
+    "tema": "Agro",
+    "itens": [
+      {
+        "id": "P069",
+        "tema": "Agro",
+        "subtema": "Produção agropecuária",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Produção agropecuária",
+        "resumo": "Fortalecer produção agropecuária e agroindustrial com crédito, inovação, sustentabilidade, armazenagem, irrigação, seguro e agregação de valor.",
+        "detalhe": "Fortalecer produção agropecuária e agroindustrial com crédito, inovação, sustentabilidade, armazenagem, irrigação, seguro e agregação de valor.",
+        "paginas": "58–62",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P070",
+        "tema": "Agro",
+        "subtema": "Produção agropecuária",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Produção agropecuária",
+        "resumo": "Foca no apoio ao agronegócio exportador, mas no governo a gestão esvaziou a Conab e os estoques reguladores, disparando o preço da comida no mercado interno.",
+        "detalhe": "Promete crédito e segurança jurídica, mas na prática o alinhamento exclusivo com grandes produtores deixou o consumidor desprotegido frente à inflação dos alimentos básicos.",
+        "paginas": "53–55",
+        "fonte": "Plano de Governo FB / Metrópoles / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P071",
+        "tema": "Agro",
+        "subtema": "Agricultura familiar",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Agricultura familiar",
+        "resumo": "Fortalecer Pronaf, compras públicas, PAA, alimentação escolar, assistência técnica, inclusão produtiva e agroindustrialização da agricultura familiar.",
+        "detalhe": "Fortalecer Pronaf, compras públicas, PAA, alimentação escolar, assistência técnica, inclusão produtiva e agroindustrialização da agricultura familiar.",
+        "paginas": "58–60",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P072",
+        "tema": "Agro",
+        "subtema": "Agricultura familiar",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Agricultura familiar",
+        "resumo": "O plano ignora a agricultura familiar; na prática, o governo anterior esvaziou o PAA e congelou verbas da merenda escolar que compravam do pequeno produtor.",
+        "detalhe": "O plano foca apenas no grande agro; no governo Bolsonaro, o incentivo aos pequenos agricultores que produzem comida de mesa foi cortado, encarecendo a feira.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / O Globo / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P073",
+        "tema": "Agro",
+        "subtema": "Seguro rural",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Seguro rural",
+        "resumo": "Ampliar instrumentos de seguro e gestão de risco climático para a produção agropecuária.",
+        "detalhe": "Ampliar instrumentos de seguro e gestão de risco climático para a produção agropecuária.",
+        "paginas": "60–62",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P074",
+        "tema": "Agro",
+        "subtema": "Seguro rural",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Seguro rural",
+        "resumo": "Promete ampliar o Seguro Rural, mas na gestão do seu grupo o Programa de Subvenção ao Seguro Rural (PSR) sofreu sucessivos cortes e contingenciamentos.",
+        "detalhe": "Defende securitização de dívidas, mas na prática o governo anterior cortou verbas de proteção aos produtores atingidos por frustrações de safra e secas no Sul.",
+        "paginas": "53–54",
+        "fonte": "Plano de Governo FB / Valor / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Cidades",
+    "itens": [
+      {
+        "id": "P065",
+        "tema": "Cidades",
+        "subtema": "Mobilidade urbana",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Mobilidade urbana",
+        "resumo": "Integrar mobilidade ao direito à cidade e ampliar investimentos urbanos dentro do Novo PAC e planejamento sustentável.",
+        "detalhe": "Integrar mobilidade ao direito à cidade e ampliar investimentos urbanos dentro do Novo PAC e planejamento sustentável.",
+        "paginas": "44–47",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P066",
+        "tema": "Cidades",
+        "subtema": "Mobilidade urbana",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Mobilidade urbana",
+        "resumo": "Promete ampliar o transporte coletivo, mas na prática o governo federal anterior não repassou recursos para a renovação de frotas ou subsídio ao preço das passagens de ônibus.",
+        "detalhe": "Defende integração metropolitana, mas na gestão anterior a falta de investimentos federais sobrecarregou os municípios e resultou em aumento de tarifas para os trabalhadores.",
+        "paginas": 51,
+        "fonte": "Plano de Governo FB / Poder360 / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Cultura",
+    "itens": [
+      {
+        "id": "P044",
+        "tema": "Cultura",
+        "subtema": "Política cultural",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Política cultural",
+        "resumo": "Propõe incentivo com capital privado, mas na prática o governo do seu grupo paralisou a Lei Rouanet, combateu o setor cultural e esvaziou o Ministério.",
+        "detalhe": "Defende valorização de raízes e patrimônio, mas no governo Bolsonaro o setor sofreu com travamento de editais comunitários e desassistência aos trabalhadores da cultura.",
+        "paginas": 41,
+        "fonte": "Plano de Governo FB / Folha / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Tema geral."
+      }
+    ]
+  },
+  {
+    "tema": "Democracia / Estado",
+    "itens": [
+      {
+        "id": "P089",
+        "tema": "Democracia / Estado",
+        "subtema": "Participação social",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Participação social",
+        "resumo": "Aprofundar conferências, conselhos, Brasil Participativo e participação social no PPA e ciclo orçamentário.",
+        "detalhe": "Aprofundar conferências, conselhos, Brasil Participativo e participação social no PPA e ciclo orçamentário.",
+        "paginas": "15–18",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P090",
+        "tema": "Democracia / Estado",
+        "subtema": "Participação social",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Participação social",
+        "resumo": "O plano ignora a participação social; na prática, o governo do seu grupo extinguiu dezenas de conselhos comunitários e comissões com participação da sociedade civil.",
+        "detalhe": "O plano rejeita órgãos participativos; no governo Bolsonaro, decretos federais fecharam canais de diálogo com sindicatos, trabalhadores e entidades comunitárias.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Poder360 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P091",
+        "tema": "Democracia / Estado",
+        "subtema": "Reforma política",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Reforma política",
+        "resumo": "Defender reforma política e eleitoral, debate sobre emendas parlamentares e aperfeiçoamento do sistema representativo.",
+        "detalhe": "Defender reforma política e eleitoral, debate sobre emendas parlamentares e aperfeiçoamento do sistema representativo.",
+        "paginas": "15–16",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P092",
+        "tema": "Democracia / Estado",
+        "subtema": "Reforma política",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Reforma política",
+        "resumo": "Promete fim da reeleição e reforma institucional, mas no governo o grupo institucionalizou o 'Orçamento Secreto' sem transparência para garantir apoio no Congresso.",
+        "detalhe": "Defende mudanças políticas, mas na prática a gestão anterior loteou verbas de emendas parlamentares e enfraqueceu os mecanismos de controle sobre a aplicação do dinheiro público.",
+        "paginas": 66,
+        "fonte": "Plano de Governo FB / Estadão / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P089",
+        "tema": "Democracia / Estado",
+        "subtema": "Participação social",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Participação social",
+        "resumo": "Aprofundar conferências, conselhos, Brasil Participativo e participação social no PPA e ciclo orçamentário.",
+        "detalhe": "Aprofundar conferências, conselhos, Brasil Participativo e participação social no PPA e ciclo orçamentário.",
+        "paginas": "15–18",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P090",
+        "tema": "Democracia / Estado",
+        "subtema": "Participação social",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Participação social",
+        "resumo": "O plano ignora a participação social; na prática, o governo do seu grupo extinguiu dezenas de conselhos comunitários e comissões com participação da sociedade civil.",
+        "detalhe": "O plano rejeita órgãos participativos; no governo Bolsonaro, decretos federais fecharam canais de diálogo com sindicatos, trabalhadores e entidades comunitárias.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Poder360 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P091",
+        "tema": "Democracia / Estado",
+        "subtema": "Reforma política",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Reforma política",
+        "resumo": "Defender reforma política e eleitoral, debate sobre emendas parlamentares e aperfeiçoamento do sistema representativo.",
+        "detalhe": "Defender reforma política e eleitoral, debate sobre emendas parlamentares e aperfeiçoamento do sistema representativo.",
+        "paginas": "15–16",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P092",
+        "tema": "Democracia / Estado",
+        "subtema": "Reforma política",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Reforma política",
+        "resumo": "Promete fim da reeleição e reforma institucional, mas no governo o grupo institucionalizou o 'Orçamento Secreto' sem transparência para garantir apoio no Congresso.",
+        "detalhe": "Defende mudanças políticas, mas na prática a gestão anterior loteou verbas de emendas parlamentares e enfraqueceu os mecanismos de controle sobre a aplicação do dinheiro público.",
+        "paginas": 66,
+        "fonte": "Plano de Governo FB / Estadão / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Desenvolvimento regional",
+    "itens": [
+      {
+        "id": "P087",
+        "tema": "Desenvolvimento regional",
+        "subtema": "Redução das desigualdades territoriais",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Redução das desigualdades territoriais",
+        "resumo": "Articular fundos regionais, infraestrutura, indústria, inovação e políticas específicas para reduzir assimetrias territoriais.",
+        "detalhe": "Articular fundos regionais, infraestrutura, indústria, inovação e políticas específicas para reduzir assimetrias territoriais.",
+        "paginas": "55–56",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P088",
+        "tema": "Desenvolvimento regional",
+        "subtema": "Redução das desigualdades territoriais",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Redução das desigualdades territoriais",
+        "resumo": "Promete fortalecer vocações regionais, mas no governo o grupo praticou contingenciamento nos fundos constitucionais do Norte, Nordeste e Centro-Oeste.",
+        "detalhe": "Defende autonomia federativa, mas na prática a gestão Bolsonaro usou repasses federais de forma política, discriminando estados e municípios governados pela oposição.",
+        "paginas": "60, 68–69",
+        "fonte": "Plano de Governo FB / Folha / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P087",
+        "tema": "Desenvolvimento regional",
+        "subtema": "Redução das desigualdades territoriais",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Redução das desigualdades territoriais",
+        "resumo": "Articular fundos regionais, infraestrutura, indústria, inovação e políticas específicas para reduzir assimetrias territoriais.",
+        "detalhe": "Articular fundos regionais, infraestrutura, indústria, inovação e políticas específicas para reduzir assimetrias territoriais.",
+        "paginas": "55–56",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P088",
+        "tema": "Desenvolvimento regional",
+        "subtema": "Redução das desigualdades territoriais",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Redução das desigualdades territoriais",
+        "resumo": "Promete fortalecer vocações regionais, mas no governo o grupo praticou contingenciamento nos fundos constitucionais do Norte, Nordeste e Centro-Oeste.",
+        "detalhe": "Defende autonomia federativa, mas na prática a gestão Bolsonaro usou repasses federais de forma política, discriminando estados e municípios governados pela oposição.",
+        "paginas": "60, 68–69",
+        "fonte": "Plano de Governo FB / Folha / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Educação",
+    "itens": [
+      {
+        "id": "P012",
+        "tema": "Educação",
+        "subtema": "Educação básica e aprendizagem",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Educação básica e aprendizagem",
+        "resumo": "Defende método fônico e gestão por resultados, mas a gestão federal do seu grupo teve 4 ministros, paralisou o MEC e derrubou os índices de alfabetização.",
+        "detalhe": "Propõe reforço escolar e capacitação, mas na prática a constante troca de comandos na Educação no governo anterior deixou municípios sem apoio e causou grave atraso na aprendizagem.",
+        "paginas": "34–36",
+        "fonte": "Plano de Governo FB / G1 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Tema geral."
+      },
+      {
+        "id": "P014",
+        "tema": "Educação",
+        "subtema": "Educação em tempo integral",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Educação em tempo integral",
+        "resumo": "Promete expandir o tempo integral, mas no governo o grupo não liberou recursos federais e deixou o Brasil abaixo das metas do Plano Nacional de Educação.",
+        "detalhe": "Defende atividades no contraturno, mas na prática o governo Bolsonaro congelou verbas de expansão escolar, deixando mães trabalhadoras sem vagas para os filhos no turno oposto.",
+        "paginas": "35–36",
+        "fonte": "Plano de Governo FB / UOL / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P016",
+        "tema": "Educação",
+        "subtema": "Ensino técnico e profissional",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Ensino técnico e profissional",
+        "resumo": "Promete ampliar o ensino técnico, mas a gestão do seu grupo bloqueou verbas de custeio dos Institutos Federais e ameaçou fechar turmas de qualificação.",
+        "detalhe": "Propõe alinhar cursos ao mercado, mas na prática o governo anterior realizou contingenciamentos recorrentes na Rede Federal, prejudicando laboratórios e bolsas.",
+        "paginas": "36–37",
+        "fonte": "Plano de Governo FB / Folha / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P018",
+        "tema": "Educação",
+        "subtema": "Pé-de-Meia",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Pé-de-Meia",
+        "resumo": "Sem proposta de poupança estudantil; na prática, o grupo votou contra ou criticou incentivos financeiros diretos para conter a evasão no Ensino Médio.",
+        "detalhe": "Sem proposta no plano; na prática, a gestão anterior não criou nenhum mecanismo de permanência escolar e o grupo criticou a bolsa-poupança para estudantes carentes.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Poder360 / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Programa específico."
+      },
+      {
+        "id": "P020",
+        "tema": "Educação",
+        "subtema": "Voucher educacional",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Voucher educacional",
+        "resumo": "Propõe vouchers para a rede privada, mas a tentativa do governo anterior não saiu do papel por falta de articulação e não criou nenhuma vaga pública.",
+        "detalhe": "Defende cupons para a rede privada onde faltar vaga, mas na prática a proposta foi rejeitada por prefeituras e não gerou impacto real ou melhoria na estrutura escolar das periferias.",
+        "paginas": "35–36",
+        "fonte": "Plano de Governo FB / Estadão / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P022",
+        "tema": "Educação",
+        "subtema": "Escolas cívico-militares",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Escolas cívico-militares",
+        "resumo": "Promete retomar o modelo cívico-militar, mas na prática o programa atendeu pouquíssimas escolas, sem amparo pedagógico ou impacto na maioria da rede.",
+        "detalhe": "Propõe a expansão do PECIM, mas a gestão do seu grupo consumiu recursos militares sem resolver os problemas de falta de professores, merenda ou infraestrutura das escolas regulares.",
+        "paginas": 35,
+        "fonte": "Plano de Governo FB / G1 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      }
+    ]
+  },
+  {
+    "tema": "Educação / cuidado",
+    "itens": [
+      {
+        "id": "P024",
+        "tema": "Educação / cuidado",
+        "subtema": "Creches",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Creches",
+        "resumo": "Propõe voucher-creche e vagas, mas a gestão do seu grupo paralisou obras do FNDE e deixou centenas de creches abandonadas pelo país.",
+        "detalhe": "Defende ampliação de vagas integrais, mas na prática o governo Bolsonaro atrasou repasses para municípios e deixou milhares de mães nas filas de espera das periferias.",
+        "paginas": 21,
+        "fonte": "Plano de Governo FB / O Globo / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta; desenho é diferente."
+      }
+    ]
+  },
+  {
+    "tema": "Empreendedorismo",
+    "itens": [
+      {
+        "id": "P057",
+        "tema": "Empreendedorismo",
+        "subtema": "Micro e pequenos negócios / MEI",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Micro e pequenos negócios / MEI",
+        "resumo": "Simplificar ambiente de negócios, ampliar compras governamentais, crédito, inovação e inserção exportadora; fortalecer instrumentos como Pronampe/Procred e orientação ao MEI.",
+        "detalhe": "Simplificar ambiente de negócios, ampliar compras governamentais, crédito, inovação e inserção exportadora; fortalecer instrumentos como Pronampe/Procred e orientação ao MEI.",
+        "paginas": "57–58",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P058",
+        "tema": "Empreendedorismo",
+        "subtema": "Micro e pequenos negócios / MEI",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Micro e pequenos negócios / MEI",
+        "resumo": "Propõe desburocratização e crédito, mas na prática a gestão anterior deixou o pequeno comerciante sem socorro imediato na pandemia e enfrentando juros bancários altos.",
+        "detalhe": "Defende ampliação de crédito ao MEI, mas no governo federal o grupo não garantiu linhas públicas acessíveis, resultando em fechamento em massa de pequenos negócios de bairro.",
+        "paginas": "27, 45–46",
+        "fonte": "Plano de Governo FB / Valor / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Energia",
+    "itens": [
+      {
+        "id": "P081",
+        "tema": "Energia",
+        "subtema": "Transição e segurança energética",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Transição e segurança energética",
+        "resumo": "Expandir transmissão, renováveis, armazenamento, biocombustíveis e políticas de combate à pobreza energética, preservando segurança do sistema.",
+        "detalhe": "Expandir transmissão, renováveis, armazenamento, biocombustíveis e políticas de combate à pobreza energética, preservando segurança do sistema.",
+        "paginas": "63–69",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P082",
+        "tema": "Energia",
+        "subtema": "Transição e segurança energética",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Transição e segurança energética",
+        "resumo": "Promete energia mais barata via cortes de impostos, mas a privatização da Eletrobras na gestão do seu grupo gerou encargos que aumentaram a conta de luz.",
+        "detalhe": "Defende expansão do gás e renováveis, mas na prática o governo Bolsonaro acionou térmicas mais caras por falta de planejamento hídrico, elevando a tarifa do consumidor.",
+        "paginas": "31, 52–53",
+        "fonte": "Plano de Governo FB / Poder360 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P081",
+        "tema": "Energia",
+        "subtema": "Transição e segurança energética",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Transição e segurança energética",
+        "resumo": "Expandir transmissão, renováveis, armazenamento, biocombustíveis e políticas de combate à pobreza energética, preservando segurança do sistema.",
+        "detalhe": "Expandir transmissão, renováveis, armazenamento, biocombustíveis e políticas de combate à pobreza energética, preservando segurança do sistema.",
+        "paginas": "63–69",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P082",
+        "tema": "Energia",
+        "subtema": "Transição e segurança energética",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Transição e segurança energética",
+        "resumo": "Promete energia mais barata via cortes de impostos, mas a privatização da Eletrobras na gestão do seu grupo gerou encargos que aumentaram a conta de luz.",
+        "detalhe": "Defende expansão do gás e renováveis, mas na prática o governo Bolsonaro acionou térmicas mais caras por falta de planejamento hídrico, elevando a tarifa do consumidor.",
+        "paginas": "31, 52–53",
+        "fonte": "Plano de Governo FB / Poder360 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Esporte",
+    "itens": [
+      {
+        "id": "P034",
+        "tema": "Esporte",
+        "subtema": "Esporte escolar e formação",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Esporte escolar e formação",
+        "resumo": "Promete o programa 'Escola de Campeões', mas a gestão do seu grupo extinguiu o Ministério do Esporte e cortou o apoio aos Jogos Escolares.",
+        "detalhe": "Defende esporte no contraturno, mas na prática o governo Bolsonaro rebaixou o Esporte a secretaria e reduziu o envio de materiais e recursos para escolinhas públicas.",
+        "paginas": 40,
+        "fonte": "Plano de Governo FB / Estadão / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P036",
+        "tema": "Esporte",
+        "subtema": "Alto rendimento / bolsas",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Alto rendimento / bolsas",
+        "resumo": "Propõe apoio com parcerias privadas, mas no governo o grupo congelou o valor do Bolsa Atleta por quatro anos, gerando forte perda com a inflação.",
+        "detalhe": "Defende apoiar atletas de elite, mas na prática a gestão anterior manteve os benefícios sem reajuste, deixando atletas olímpicos e paralímpicos sem suporte adequado.",
+        "paginas": 40,
+        "fonte": "Plano de Governo FB / UOL / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P038",
+        "tema": "Esporte",
+        "subtema": "Esporte feminino",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Esporte feminino",
+        "resumo": "Propõe regras para categorias femininas, mas no governo o grupo não criou nenhuma linha de financiamento ou incentivo ao desenvolvimento do esporte feminino de base.",
+        "detalhe": "Centra a proposta no debate sobre atletas trans, mas na prática não implementou programas federais para estruturar ligas femininas ou apoiar atletas mães.",
+        "paginas": "40–41",
+        "fonte": "Plano de Governo FB / Poder360 / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P040",
+        "tema": "Esporte",
+        "subtema": "Paradesporto",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Paradesporto",
+        "resumo": "Defende detectar talentos paralímpicos, mas na prática a gestão do seu grupo cortou verbas de inclusão e manteve bolsas paradesportivas congeladas.",
+        "detalhe": "Propõe autonomia de entidades e reabilitação, mas a gestão anterior reduziu repasses federais para infraestrutura acessível e iniciação esportiva de pessoas com deficiência.",
+        "paginas": 40,
+        "fonte": "Plano de Governo FB / G1 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P042",
+        "tema": "Esporte",
+        "subtema": "Universidade do Esporte",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Universidade do Esporte",
+        "resumo": "Sem proposta no plano; na prática, a gestão anterior não criou mecanismos de formação acadêmica técnica voltada a profissionais e treinadores do esporte.",
+        "detalhe": "Sem proposta no plano; o grupo político nunca estruturou centros de formação universitária dedicados ao desenvolvimento da ciência do esporte no país.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Poder360",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      }
+    ]
+  },
+  {
+    "tema": "Fiscal / tributário",
+    "itens": [
+      {
+        "id": "P097",
+        "tema": "Fiscal / tributário",
+        "subtema": "Tributação e contas públicas",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Tributação e contas públicas",
+        "resumo": "Manter arcabouço fiscal, justiça tributária, implementação da reforma do consumo e políticas de progressividade tributária.",
+        "detalhe": "Manter arcabouço fiscal, justiça tributária, implementação da reforma do consumo e políticas de progressividade tributária.",
+        "paginas": "10–12, 47–49",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P098",
+        "tema": "Fiscal / tributário",
+        "subtema": "Tributação e contas públicas",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Tributação e contas públicas",
+        "resumo": "Promete corte de despesas e menor IVA, mas no governo o grupo estourou o teto de gastos em ano eleitoral e deixou um calote bilionário em precatórios e dívidas federais.",
+        "detalhe": "Defende equilíbrio fiscal, mas na prática a gestão anterior concedeu desonerações sem compensação e furou as regras fiscais do país para aprovar benefícios temporários.",
+        "paginas": "68–72",
+        "fonte": "Plano de Governo FB / O Globo / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P097",
+        "tema": "Fiscal / tributário",
+        "subtema": "Tributação e contas públicas",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Tributação e contas públicas",
+        "resumo": "Manter arcabouço fiscal, justiça tributária, implementação da reforma do consumo e políticas de progressividade tributária.",
+        "detalhe": "Manter arcabouço fiscal, justiça tributária, implementação da reforma do consumo e políticas de progressividade tributária.",
+        "paginas": "10–12, 47–49",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P098",
+        "tema": "Fiscal / tributário",
+        "subtema": "Tributação e contas públicas",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Tributação e contas públicas",
+        "resumo": "Promete corte de despesas e menor IVA, mas no governo o grupo estourou o teto de gastos em ano eleitoral e deixou um calote bilionário em precatórios e dívidas federais.",
+        "detalhe": "Defende equilíbrio fiscal, mas na prática a gestão anterior concedeu desonerações sem compensação e furou as regras fiscais do país para aprovar benefícios temporários.",
+        "paginas": "68–72",
+        "fonte": "Plano de Governo FB / O Globo / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Gestão pública",
+    "itens": [
+      {
+        "id": "P095",
+        "tema": "Gestão pública",
+        "subtema": "Digitalização e gestão",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Digitalização e gestão",
+        "resumo": "Universalizar serviços públicos digitais de qualidade, fortalecer cooperação federativa, transparência, integridade e uso de IA.",
+        "detalhe": "Universalizar serviços públicos digitais de qualidade, fortalecer cooperação federativa, transparência, integridade e uso de IA.",
+        "paginas": "16–18",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P096",
+        "tema": "Gestão pública",
+        "subtema": "Digitalização e gestão",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Digitalização e gestão",
+        "resumo": "Propõe 'tesouraço' e corte de ministérios, mas na prática o governo anterior recriou ministérios por barganha política e impôs sigilos de 100 anos para esconder atos públicos.",
+        "detalhe": "Defende profissionalização e transparência, mas na gestão Bolsonaro o controle de acesso a dados públicos foi dificultado e os órgãos de auditoria foram aparelhados.",
+        "paginas": "24–25, 68–70",
+        "fonte": "Plano de Governo FB / Metrópoles / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P095",
+        "tema": "Gestão pública",
+        "subtema": "Digitalização e gestão",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Digitalização e gestão",
+        "resumo": "Universalizar serviços públicos digitais de qualidade, fortalecer cooperação federativa, transparência, integridade e uso de IA.",
+        "detalhe": "Universalizar serviços públicos digitais de qualidade, fortalecer cooperação federativa, transparência, integridade e uso de IA.",
+        "paginas": "16–18",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P096",
+        "tema": "Gestão pública",
+        "subtema": "Digitalização e gestão",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Digitalização e gestão",
+        "resumo": "Propõe 'tesouraço' e corte de ministérios, mas na prática o governo anterior recriou ministérios por barganha política e impôs sigilos de 100 anos para esconder atos públicos.",
+        "detalhe": "Defende profissionalização e transparência, mas na gestão Bolsonaro o controle de acesso a dados públicos foi dificultado e os órgãos de auditoria foram aparelhados.",
+        "paginas": "24–25, 68–70",
+        "fonte": "Plano de Governo FB / Metrópoles / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Habitação",
+    "itens": [
+      {
+        "id": "P059",
+        "tema": "Habitação",
+        "subtema": "Moradia popular",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Moradia popular",
+        "resumo": "Manter e ampliar o Minha Casa Minha Vida, retomar obras, ampliar faixas de renda e usar imóveis da União em políticas habitacionais.",
+        "detalhe": "Manter e ampliar o Minha Casa Minha Vida, retomar obras, ampliar faixas de renda e usar imóveis da União em políticas habitacionais.",
+        "paginas": "44–45",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P060",
+        "tema": "Habitação",
+        "subtema": "Moradia popular",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Moradia popular",
+        "resumo": "Promete retomar o Casa Verde e Amarela, mas no governo o grupo zerou os subsídios para famílias de baixa renda (Faixa 1), paralisando a entrega de casas populares.",
+        "detalhe": "Defende soluções de patrimônio via Caixa, mas na prática a gestão Bolsonaro excluiu quem ganhava até dois salários mínimos do acesso à habitação própria gratuita ou subsidiada.",
+        "paginas": 47,
+        "fonte": "Plano de Governo FB / O Globo / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Infraestrutura",
+    "itens": [
+      {
+        "id": "P063",
+        "tema": "Infraestrutura",
+        "subtema": "Logística e transportes",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Logística e transportes",
+        "resumo": "Nova edição do Novo PAC, continuidade de concessões rodoviárias, intensificação de ferrovias, aeroportos regionais, portos e integração logística.",
+        "detalhe": "Nova edição do Novo PAC, continuidade de concessões rodoviárias, intensificação de ferrovias, aeroportos regionais, portos e integração logística.",
+        "paginas": "52–55",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P064",
+        "tema": "Infraestrutura",
+        "subtema": "Logística e transportes",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Logística e transportes",
+        "resumo": "Promete corredores logísticos, mas no governo o grupo paralisou obras públicas federais, reduzindo os investimentos em infraestrutura aos menores níveis em décadas.",
+        "detalhe": "Defende ampliação de rodovias e ferrovias, mas na prática a gestão Bolsonaro dependeu de autorizações privadas que não saíram do papel e deixaram estradas sem manutenção.",
+        "paginas": "50–51",
+        "fonte": "Plano de Governo FB / Folha / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Judiciário",
+    "itens": [
+      {
+        "id": "P093",
+        "tema": "Judiciário",
+        "subtema": "Reforma do STF / Judiciário",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Reforma do STF / Judiciário",
+        "resumo": "Manter diálogo institucional para aperfeiçoar o sistema de Justiça, respeitando autonomia dos Poderes e buscando reduzir morosidade.",
+        "detalhe": "Manter diálogo institucional para aperfeiçoar o sistema de Justiça, respeitando autonomia dos Poderes e buscando reduzir morosidade.",
+        "paginas": 16,
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos tratam o Judiciário, com propostas bastante distintas."
+      },
+      {
+        "id": "P094",
+        "tema": "Judiciário",
+        "subtema": "Reforma do STF / Judiciário",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Reforma do STF / Judiciário",
+        "resumo": "Propõe limitar decisões do STF, mas no governo a atuação do grupo gerou crises institucionais constantes, ameaças ao Supremo e descumprimento de ordens judiciais.",
+        "detalhe": "Defende redefinir competências das cortes, mas na prática a gestão Bolsonaro usou ataques ao Judiciário para deslegitimar investigações e tentar reverter decisões adversas.",
+        "paginas": "65–66",
+        "fonte": "Plano de Governo FB / G1 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos tratam o Judiciário, com propostas bastante distintas."
+      },
+      {
+        "id": "P093",
+        "tema": "Judiciário",
+        "subtema": "Reforma do STF / Judiciário",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Reforma do STF / Judiciário",
+        "resumo": "Manter diálogo institucional para aperfeiçoar o sistema de Justiça, respeitando autonomia dos Poderes e buscando reduzir morosidade.",
+        "detalhe": "Manter diálogo institucional para aperfeiçoar o sistema de Justiça, respeitando autonomia dos Poderes e buscando reduzir morosidade.",
+        "paginas": 16,
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos tratam o Judiciário, com propostas bastante distintas."
+      },
+      {
+        "id": "P094",
+        "tema": "Judiciário",
+        "subtema": "Reforma do STF / Judiciário",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Reforma do STF / Judiciário",
+        "resumo": "Propõe limitar decisões do STF, mas no governo a atuação do grupo gerou crises institucionais constantes, ameaças ao Supremo e descumprimento de ordens judiciais.",
+        "detalhe": "Defende redefinir competências das cortes, mas na prática a gestão Bolsonaro usou ataques ao Judiciário para deslegitimar investigações e tentar reverter decisões adversas.",
+        "paginas": "65–66",
+        "fonte": "Plano de Governo FB / G1 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos tratam o Judiciário, com propostas bastante distintas."
+      }
+    ]
+  },
+  {
+    "tema": "Meio ambiente",
+    "itens": [
+      {
+        "id": "P077",
+        "tema": "Meio ambiente",
+        "subtema": "Clima e desmatamento",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Clima e desmatamento",
+        "resumo": "Reforçar fiscalização, monitoramento satelital e IA, metas climáticas, restauração e adaptação, com mecanismos permanentes de financiamento climático.",
+        "detalhe": "Reforçar fiscalização, monitoramento satelital e IA, metas climáticas, restauração e adaptação, com mecanismos permanentes de financiamento climático.",
+        "paginas": "69–73",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P078",
+        "tema": "Meio ambiente",
+        "subtema": "Clima e desmatamento",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Clima e desmatamento",
+        "resumo": "Promete combater crimes ambientais, mas na prática o governo anterior desmontou os órgãos de fiscalização (Ibama/ICMBio) e registrou recordes de desmatamento na Amazônia.",
+        "detalhe": "Defende bioeconomia e mercado de carbono, mas no governo Bolsonaro o enfraquecimento de multas e fiscalizações isolou o Brasil internacionalmente e acelerou a destruição ambiental.",
+        "paginas": "57–59",
+        "fonte": "Plano de Governo FB / Estadão / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P079",
+        "tema": "Meio ambiente",
+        "subtema": "Pagamento por Serviços Ambientais",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Pagamento por Serviços Ambientais",
+        "resumo": "Aprimorar programas de PSA voltados à biodiversidade e reconhecer restauração biocultural como estratégia de Estado.",
+        "detalhe": "Aprimorar programas de PSA voltados à biodiversidade e reconhecer restauração biocultural como estratégia de Estado.",
+        "paginas": 72,
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P080",
+        "tema": "Meio ambiente",
+        "subtema": "Pagamento por Serviços Ambientais",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Pagamento por Serviços Ambientais",
+        "resumo": "Propõe remunerar produtores por preservação, mas no governo o grupo paralisou a regularização do Cadastro Ambiental Rural (CAR) e os repasses do Fundo Amazônia.",
+        "detalhe": "Defende incentivo financeiro ao preservador, mas na prática a gestão anterior travou recursos internacionais e nacionais voltados à restauração e conservação de florestas.",
+        "paginas": "55, 57",
+        "fonte": "Plano de Governo FB / G1 / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P078",
+        "tema": "Meio ambiente",
+        "subtema": "Clima e desmatamento",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Clima e desmatamento",
+        "resumo": "Promete combater crimes ambientais, mas na prática o governo anterior desmontou os órgãos de fiscalização (Ibama/ICMBio) e registrou recordes de desmatamento na Amazônia.",
+        "detalhe": "Defende bioeconomia e mercado de carbono, mas no governo Bolsonaro o enfraquecimento de multas e fiscalizações isolou o Brasil internacionalmente e acelerou a destruição ambiental.",
+        "paginas": "57–59",
+        "fonte": "Plano de Governo FB / Estadão / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P079",
+        "tema": "Meio ambiente",
+        "subtema": "Pagamento por Serviços Ambientais",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Pagamento por Serviços Ambientais",
+        "resumo": "Aprimorar programas de PSA voltados à biodiversidade e reconhecer restauração biocultural como estratégia de Estado.",
+        "detalhe": "Aprimorar programas de PSA voltados à biodiversidade e reconhecer restauração biocultural como estratégia de Estado.",
+        "paginas": 72,
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P080",
+        "tema": "Meio ambiente",
+        "subtema": "Pagamento por Serviços Ambientais",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Pagamento por Serviços Ambientais",
+        "resumo": "Propõe remunerar produtores por preservação, mas no governo o grupo paralisou a regularização do Cadastro Ambiental Rural (CAR) e os repasses do Fundo Amazônia.",
+        "detalhe": "Defende incentivo financeiro ao preservador, mas na prática a gestão anterior travou recursos internacionais e nacionais voltados à restauração e conservação de florestas.",
+        "paginas": "55, 57",
+        "fonte": "Plano de Governo FB / G1 / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Mulheres",
+    "itens": [
+      {
+        "id": "P010",
+        "tema": "Mulheres",
+        "subtema": "Proteção e atendimento integrado",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Proteção e atendimento integrado",
+        "resumo": "Propõe a Central da Mulher, mas a gestão do seu grupo cortou verbas do combate à violência doméstica aos menores patamares da história.",
+        "detalhe": "Promete suporte integrado e crédito, mas na prática o governo Bolsonaro paralisou a expansão das Casas da Mulher Brasileira e cortou 90% do orçamento de proteção às mulheres em 2022.",
+        "paginas": "17–21",
+        "fonte": "Plano de Governo FB / Metrópoles / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm propostas específicas para mulheres."
+      }
+    ]
+  },
+  {
+    "tema": "Previdência / INSS",
+    "itens": [
+      {
+        "id": "P050",
+        "tema": "Previdência / INSS",
+        "subtema": "Acesso e modernização do INSS",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Acesso e modernização do INSS",
+        "resumo": "Promete 'INSS sem fila', mas na prática a gestão do seu grupo deixou o INSS com mais de 1,8 milhão de pessoas na fila e atrasos recordes na perícia.",
+        "detalhe": "Propõe pacote antifraude e rapidez, mas no governo Bolsonaro a falta de servidores e sistemas defasados fez idosos e trabalhadores esperarem mais de seis meses por um benefício.",
+        "paginas": "26, 72–73",
+        "fonte": "Plano de Governo FB / G1 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Proteção social",
+    "itens": [
+      {
+        "id": "P046",
+        "tema": "Proteção social",
+        "subtema": "Programas sociais",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Programas sociais",
+        "resumo": "Promete manter programas e associar a emprego, mas na prática o governo do seu grupo usou o Auxílio Brasil com fins eleitorais e desestruturou o cadastro social.",
+        "detalhe": "Defende corrigir distorções, mas na gestão anterior a falta de fiscalização gerou fraudes maciças e longas filas no CadÚnico de famílias que precisavam do amparo.",
+        "paginas": "42–43",
+        "fonte": "Plano de Governo FB / O Globo / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P048",
+        "tema": "Proteção social",
+        "subtema": "Bolsa Família",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Bolsa Família",
+        "resumo": "O plano omite o nome 'Bolsa Família' e na prática a gestão do seu grupo extinguiu a marca histórica do programa para criar o Auxílio Brasil de forma temporária.",
+        "detalhe": "Sem proposta nominal; no governo anterior, a gestão acabou com as condicionantes de saúde e educação do Bolsa Família, desconfigurando a proteção à infância.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Metrópoles / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Programa específico."
+      }
+    ]
+  },
+  {
+    "tema": "Relações internacionais",
+    "itens": [
+      {
+        "id": "P099",
+        "tema": "Relações internacionais",
+        "subtema": "Soberania e política externa",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Soberania e política externa",
+        "resumo": "Fortalecer multilateralismo, integração regional, Sul Global, defesa da soberania e protagonismo internacional.",
+        "detalhe": "Fortalecer multilateralismo, integração regional, Sul Global, defesa da soberania e protagonismo internacional.",
+        "paginas": "77–83",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P100",
+        "tema": "Relações internacionais",
+        "subtema": "Soberania e política externa",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Soberania e política externa",
+        "resumo": "Promete adesão à OCDE e abertura comercial, mas no governo o grupo isolou o Brasil diplomaticamente, atacando parceiros comerciais estratégicos como a China e a União Europeia.",
+        "detalhe": "Defende atuação por interesses nacionais, mas na prática a política externa da gestão Bolsonaro sofreu sanções informais e perda de investimentos externos por desrespeito a acordos climáticos.",
+        "paginas": "61–64",
+        "fonte": "Plano de Governo FB / Folha / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P099",
+        "tema": "Relações internacionais",
+        "subtema": "Soberania e política externa",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Soberania e política externa",
+        "resumo": "Fortalecer multilateralismo, integração regional, Sul Global, defesa da soberania e protagonismo internacional.",
+        "detalhe": "Fortalecer multilateralismo, integração regional, Sul Global, defesa da soberania e protagonismo internacional.",
+        "paginas": "77–83",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P100",
+        "tema": "Relações internacionais",
+        "subtema": "Soberania e política externa",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Soberania e política externa",
+        "resumo": "Promete adesão à OCDE e abertura comercial, mas no governo o grupo isolou o Brasil diplomaticamente, atacando parceiros comerciais estratégicos como a China e a União Europeia.",
+        "detalhe": "Defende atuação por interesses nacionais, mas na prática a política externa da gestão Bolsonaro sofreu sanções informais e perda de investimentos externos por desrespeito a acordos climáticos.",
+        "paginas": "61–64",
+        "fonte": "Plano de Governo FB / Folha / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Saneamento",
+    "itens": [
+      {
+        "id": "P061",
+        "tema": "Saneamento",
+        "subtema": "Água, esgoto e resíduos",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Água, esgoto e resíduos",
+        "resumo": "Continuar investimentos e apoiar estados e municípios na universalização do saneamento, incluindo água, esgoto e resíduos.",
+        "detalhe": "Continuar investimentos e apoiar estados e municípios na universalização do saneamento, incluindo água, esgoto e resíduos.",
+        "paginas": "44–47",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P062",
+        "tema": "Saneamento",
+        "subtema": "Água, esgoto e resíduos",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Água, esgoto e resíduos",
+        "resumo": "Defende concessões privadas no saneamento, mas no governo o grupo cortou recursos públicos para saneamento básico rural e periferias não atraentes ao mercado.",
+        "detalhe": "Promete universalização via capital privado, mas na prática a gestão anterior deixou municípios menores e comunidades do interior sem obras de esgoto e água encanada.",
+        "paginas": "47, 57",
+        "fonte": "Plano de Governo FB / Estadão / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Saúde",
+    "itens": [
+      {
+        "id": "P026",
+        "tema": "Saúde",
+        "subtema": "Atenção básica e especializada",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Atenção básica e especializada",
+        "resumo": "Propõe parceria com a rede privada, mas a gestão do seu grupo desestruturou o atendimento primário e deixou postos de saúde sem médicos.",
+        "detalhe": "Promete atendimento próximo de casa, mas na prática a descontinuidade do Mais Médicos no governo anterior deixou cidades do interior e bairros carentes sem atendimento médico regular.",
+        "paginas": "37–38",
+        "fonte": "Plano de Governo FB / BBC / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Tema geral."
+      },
+      {
+        "id": "P028",
+        "tema": "Saúde",
+        "subtema": "Prontuário eletrônico / integração de dados",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Prontuário eletrônico / integração de dados",
+        "resumo": "Promete prontuário único, mas a gestão do seu grupo provocou o maior apagão de dados da história do SUS ao deixar o ConecteSUS sair do ar por semanas.",
+        "detalhe": "Defende banco integrado de dados, mas na prática a falta de investimento em segurança da informação no governo anterior resultou em ataques hackers e perda de histórico de pacientes.",
+        "paginas": "25–26",
+        "fonte": "Plano de Governo FB / Poder360 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P030",
+        "tema": "Saúde",
+        "subtema": "Telessaúde / teleatendimento",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Telessaúde / teleatendimento",
+        "resumo": "Propõe telessaúde por aplicativo, mas na prática o governo anterior adotou a medida apenas emergencialmente e não equipou os postos municipais para consultas com especialistas.",
+        "detalhe": "Promete deslocar capacidade médica via app, mas a gestão do seu grupo não estruturou rede de internet nem computadores nos postos de saúde do interior para reduzir as filas.",
+        "paginas": "37–38",
+        "fonte": "Plano de Governo FB / Valor / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P032",
+        "tema": "Saúde",
+        "subtema": "Saúde mental",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Saúde mental",
+        "resumo": "Inclui saúde mental no plano, mas na prática a gestão do seu grupo paralisou a expansão dos CAPS no SUS e cortou verbas do atendimento comunitário gratuito.",
+        "detalhe": "Defende prevenção e cuidado, mas no governo federal o grupo privilegiou repasses privados em detrimento do fortalecimento da rede pública de psicólogos e psiquiatras no SUS.",
+        "paginas": "38–40",
+        "fonte": "Plano de Governo FB / Folha / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Segurança alimentar",
+    "itens": [
+      {
+        "id": "P075",
+        "tema": "Segurança alimentar",
+        "subtema": "Produção e preço dos alimentos",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Produção e preço dos alimentos",
+        "resumo": "Fortalecer produção, estoques reguladores, compras da agricultura familiar e políticas de segurança alimentar para ampliar acesso e reduzir pressão sobre preços.",
+        "detalhe": "Fortalecer produção, estoques reguladores, compras da agricultura familiar e políticas de segurança alimentar para ampliar acesso e reduzir pressão sobre preços.",
+        "paginas": "58–60",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P076",
+        "tema": "Segurança alimentar",
+        "subtema": "Produção e preço dos alimentos",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Produção e preço dos alimentos",
+        "resumo": "Promete reduzir preços com cortes tributários, mas no governo o grupo desmontou os estoques públicos de alimentos, gerando explosão na inflação da cesta básica.",
+        "detalhe": "Defende estímulos à produção, mas na prática a gestão Bolsonaro não agiu para conter o preço do arroz, feijão e óleo de cozinha, que atingiram altas históricas.",
+        "paginas": "31–32, 53",
+        "fonte": "Plano de Governo FB / Folha / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Segurança pública",
+    "itens": [
+      {
+        "id": "P002",
+        "tema": "Segurança pública",
+        "subtema": "Crime organizado",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Crime organizado",
+        "resumo": "Propõe declarar facções como narcoterroristas e bloquear ativos, mas o histórico da família registra vetos a verbas de inteligência e facilitação do crime por arsenais liberados.",
+        "detalhe": "O plano promete integração de inteligência contra o crime organizado, mas na prática a gestão Bolsonaro cortou verbas da PF/PRF e a flexibilização de armas abasteceu o PCC e o Comando Vermelho.",
+        "paginas": "13–16",
+        "fonte": "Plano de Governo FB / Folha / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos tratam o tema, com estratégias e marcos institucionais diferentes."
+      },
+      {
+        "id": "P004",
+        "tema": "Segurança pública",
+        "subtema": "Reconhecimento facial",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Reconhecimento facial",
+        "resumo": "Propõe a 'Muralha Brasileira' com reconhecimento facial, mas governos aliados e o governo federal anterior não regulamentaram o uso ético, gerando prisões indevidas.",
+        "detalhe": "Promete sistema integrado de câmeras com IA, mas na prática a falta de diretrizes nacionais no governo anterior levou a erros frequentes e prisões por engano de cidadãos trabalhadores.",
+        "paginas": 15,
+        "fonte": "Plano de Governo FB / O Globo / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P006",
+        "tema": "Segurança pública",
+        "subtema": "Câmeras corporais",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Câmeras corporais",
+        "resumo": "O plano omite câmeras corporais e o grupo político sempre se opôs ao equipamento, desestimulando a transparência e a proteção jurídica dos próprios policiais.",
+        "detalhe": "Sem proposta no plano; na prática, Bolsonaro e aliados criticaram e cortaram o financiamento federal para câmeras em fardas, paralisando a modernização dos equipamentos nos estados.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Poder360 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P008",
+        "tema": "Segurança pública",
+        "subtema": "Maioridade penal",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Maioridade penal",
+        "resumo": "Defende a redução da maioridade para 16 anos, mas no governo o grupo usou a pauta como apelo eleitoral sem aprovar a mudança ou investir na prevenção social da juventude.",
+        "detalhe": "Propõe punição para maiores de 14 anos em crimes graves, mas na prática quatro anos de governo federal não resultaram em articulação para aprovar a PEC nem em investimentos para afastar jovens do crime.",
+        "paginas": 13,
+        "fonte": "Plano de Governo FB / Estadão / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      }
+    ]
+  },
+  {
+    "tema": "Tecnologia",
+    "itens": [
+      {
+        "id": "P083",
+        "tema": "Tecnologia",
+        "subtema": "Inteligência artificial e digitalização",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Inteligência artificial e digitalização",
+        "resumo": "Expandir infraestrutura pública digital, serviços digitais, IA nacional, soberania de dados, modelos de linguagem em português e difusão de IA no setor produtivo.",
+        "detalhe": "Expandir infraestrutura pública digital, serviços digitais, IA nacional, soberania de dados, modelos de linguagem em português e difusão de IA no setor produtivo.",
+        "paginas": "16–18, 54–56",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P084",
+        "tema": "Tecnologia",
+        "subtema": "Inteligência artificial e digitalização",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Inteligência artificial e digitalização",
+        "resumo": "Propõe digitalizar 100% dos serviços, mas na prática a gestão anterior sofreu ataques cibernéticos graves por falta de investimento e atrasou a inclusão digital nas escolas.",
+        "detalhe": "Defende IA e proteção de dados, mas no governo federal o grupo usou estruturas digitais para disseminação de conteúdos desinformativos em vez de modernizar o atendimento ao cidadão.",
+        "paginas": "24–25, 56–57",
+        "fonte": "Plano de Governo FB / Metrópoles / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P083",
+        "tema": "Tecnologia",
+        "subtema": "Inteligência artificial e digitalização",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Inteligência artificial e digitalização",
+        "resumo": "Expandir infraestrutura pública digital, serviços digitais, IA nacional, soberania de dados, modelos de linguagem em português e difusão de IA no setor produtivo.",
+        "detalhe": "Expandir infraestrutura pública digital, serviços digitais, IA nacional, soberania de dados, modelos de linguagem em português e difusão de IA no setor produtivo.",
+        "paginas": "16–18, 54–56",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P084",
+        "tema": "Tecnologia",
+        "subtema": "Inteligência artificial e digitalização",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Inteligência artificial e digitalização",
+        "resumo": "Propõe digitalizar 100% dos serviços, mas na prática a gestão anterior sofreu ataques cibernéticos graves por falta de investimento e atrasou a inclusão digital nas escolas.",
+        "detalhe": "Defende IA e proteção de dados, mas no governo federal o grupo usou estruturas digitais para disseminação de conteúdos desinformativos em vez de modernizar o atendimento ao cidadão.",
+        "paginas": "24–25, 56–57",
+        "fonte": "Plano de Governo FB / Metrópoles / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Trabalho",
+    "itens": [
+      {
+        "id": "P051",
+        "tema": "Trabalho",
+        "subtema": "Valorização do salário mínimo",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Valorização do salário mínimo",
+        "resumo": "Dar continuidade à política de valorização real do salário mínimo como instrumento de distribuição de renda e desenvolvimento.",
+        "detalhe": "Dar continuidade à política de valorização real do salário mínimo como instrumento de distribuição de renda e desenvolvimento.",
+        "paginas": 74,
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P052",
+        "tema": "Trabalho",
+        "subtema": "Valorização do salário mínimo",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Valorização do salário mínimo",
+        "resumo": "Sem proposta no plano; na prática, a gestão anterior extinguiu a política de ganho real do salário mínimo, limitando os reajustes apenas à inflação por quatro anos.",
+        "detalhe": "O plano omite valorização real; no governo Bolsonaro o mínimo ficou sem aumento acima do custo de vida, reduzindo o poder de compra das famílias nos supermercados.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Folha / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P053",
+        "tema": "Trabalho",
+        "subtema": "Trabalho por plataformas",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Trabalho por plataformas",
+        "resumo": "Consolidar sistema de proteção para trabalho em plataformas, com regras sobre vínculo, remuneração, condições, direitos, previdência e transparência algorítmica.",
+        "detalhe": "Consolidar sistema de proteção para trabalho em plataformas, com regras sobre vínculo, remuneração, condições, direitos, previdência e transparência algorítmica.",
+        "paginas": "74–76",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P054",
+        "tema": "Trabalho",
+        "subtema": "Trabalho por plataformas",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Trabalho por plataformas",
+        "resumo": "Critica a regulação, mas não apresenta marco de direitos; na prática, o grupo atuou contra garantias previdenciárias e piso de ganhos aos entregadores e motoristas.",
+        "detalhe": "O plano recusa regras trabalhistas para apps; na prática, a gestão anterior manteve os trabalhadores sem seguro contra acidentes, auxílio de saúde ou amparo da Previdência.",
+        "paginas": "—",
+        "fonte": "Plano de Governo FB / Poder360 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Subtema específico."
+      },
+      {
+        "id": "P055",
+        "tema": "Trabalho",
+        "subtema": "Primeiro emprego e qualificação",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Primeiro emprego e qualificação",
+        "resumo": "Integrar qualificação profissional, Sistema Público de Emprego e políticas para juventude às demandas produtivas.",
+        "detalhe": "Integrar qualificação profissional, Sistema Público de Emprego e políticas para juventude às demandas produtivas.",
+        "paginas": "24–25, 74",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P056",
+        "tema": "Trabalho",
+        "subtema": "Primeiro emprego e qualificação",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Primeiro emprego e qualificação",
+        "resumo": "Propõe desoneração para contratação de jovens, mas no governo o grupo tentou a 'Carteira Verde e Amarela' sem criar empregos formais sustentáveis ou qualificação real.",
+        "detalhe": "Promete redução do custo de contratação e banco de vagas, mas a gestão anterior retirou direitos trabalhistas da juventude sem garantir estabilidade ou aumento de renda.",
+        "paginas": "43–44",
+        "fonte": "Plano de Governo FB / Estadão / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Turismo",
+    "itens": [
+      {
+        "id": "P085",
+        "tema": "Turismo",
+        "subtema": "Desenvolvimento do turismo",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Desenvolvimento do turismo",
+        "resumo": "Apoiar destinos regionais, ecoturismo, cultura, gastronomia, promoção internacional e financiamento ao setor.",
+        "detalhe": "Apoiar destinos regionais, ecoturismo, cultura, gastronomia, promoção internacional e financiamento ao setor.",
+        "paginas": "56–57",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P086",
+        "tema": "Turismo",
+        "subtema": "Desenvolvimento do turismo",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Desenvolvimento do turismo",
+        "resumo": "Promete expansão do turismo regional, mas no governo o grupo aparelhou a Embratur e deixou o setor desamparado no auge das restrições de viagens.",
+        "detalhe": "Defende geração de empregos no interior, mas na prática a gestão anterior cancelou verbas de promoção do Brasil no exterior e reduziu incentivos ao ecoturismo.",
+        "paginas": "59–60",
+        "fonte": "Plano de Governo FB / O Globo / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P085",
+        "tema": "Turismo",
+        "subtema": "Desenvolvimento do turismo",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Desenvolvimento do turismo",
+        "resumo": "Apoiar destinos regionais, ecoturismo, cultura, gastronomia, promoção internacional e financiamento ao setor.",
+        "detalhe": "Apoiar destinos regionais, ecoturismo, cultura, gastronomia, promoção internacional e financiamento ao setor.",
+        "paginas": "56–57",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P086",
+        "tema": "Turismo",
+        "subtema": "Desenvolvimento do turismo",
+        "candidato": "Flávio Bolsonaro",
+        "status": "SEM PROPOSTA",
+        "titulo": "Desenvolvimento do turismo",
+        "resumo": "Promete expansão do turismo regional, mas no governo o grupo aparelhou a Embratur e deixou o setor desamparado no auge das restrições de viagens.",
+        "detalhe": "Defende geração de empregos no interior, mas na prática a gestão anterior cancelou verbas de promoção do Brasil no exterior e reduziu incentivos ao ecoturismo.",
+        "paginas": "59–60",
+        "fonte": "Plano de Governo FB / O Globo / Jovem Pan",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  },
+  {
+    "tema": "Água",
+    "itens": [
+      {
+        "id": "P067",
+        "tema": "Água",
+        "subtema": "Segurança hídrica",
+        "candidato": "Lula",
+        "status": "PROPOSTA",
+        "titulo": "Segurança hídrica",
+        "resumo": "Ampliar infraestrutura hídrica, revitalização de bacias, reservatórios, cisternas e obras de segurança hídrica.",
+        "detalhe": "Ampliar infraestrutura hídrica, revitalização de bacias, reservatórios, cisternas e obras de segurança hídrica.",
+        "paginas": "72–73",
+        "fonte": "Programa de Governo Lula 2026",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      },
+      {
+        "id": "P068",
+        "tema": "Água",
+        "subtema": "Segurança hídrica",
+        "candidato": "Flávio Bolsonaro",
+        "status": "PROPOSTA",
+        "titulo": "Segurança hídrica",
+        "resumo": "Promete acelerar obras hídricas, mas no governo o grupo cortou o programa de construção de cisternas no Nordeste e paralisou repasses da Operação Carro-Pipa.",
+        "detalhe": "Defende infraestrutura de abastecimento, mas na prática a gestão Bolsonaro interrompeu a entrega de água tratada para famílias rurais em períodos de seca prolongada.",
+        "paginas": 52,
+        "fonte": "Plano de Governo FB / G1 / Gazeta do Povo",
+        "revisao": "Em revisão",
+        "observacoes": "Ambos têm proposta."
+      }
+    ]
+  }
+]
