@@ -28,7 +28,13 @@
     if (!options.noCache && cache.has(url)) return cache.get(url);
     const p = fetch(url, { headers: { Accept: 'application/json' }, cache: 'default' })
       .then(async r => {
-        if (!r.ok) throw new Error(`HTTP ${r.status} em ${url}`);
+        if (!r.ok) {
+          if (String(url).startsWith('/api/dados/')) {
+            const problem = await r.json().catch(() => null);
+            if (problem && typeof problem.error === 'string') throw new Error(problem.error);
+          }
+          throw new Error(`HTTP ${r.status} em ${url}`);
+        }
         return r.json();
       });
     if (!options.noCache) cache.set(url, p);
