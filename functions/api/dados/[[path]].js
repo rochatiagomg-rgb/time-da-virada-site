@@ -32,7 +32,12 @@ export async function onRequest(context) {
       signal:AbortSignal.timeout(15000)
     });
   } catch { return error(502, 'A base de resultados está temporariamente indisponível. Tente novamente.'); }
-  if (!upstream.ok) return error(upstream.status === 404 ? 404 : 502, upstream.status === 404 ? 'Arquivo de resultados não encontrado.' : 'Não foi possível consultar a base de resultados.');
+  if (!upstream.ok) {
+    if (upstream.status === 401) return error(502, 'O GitHub recusou a credencial da consulta (401). Confira o segredo GITHUB_DATA_TOKEN.');
+    if (upstream.status === 403) return error(502, 'O GitHub bloqueou a consulta (403). Confira a permissão Contents: Read-only e o limite de consultas.');
+    if (upstream.status === 404) return error(404, 'O GitHub não disponibilizou este arquivo (404). Confira o acesso do token ao repositório privado.');
+    return error(502, 'A base de resultados está indisponível (GitHub HTTP ' + upstream.status + ').');
+  }
   let data;
   try { data = await upstream.json(); } catch { return error(502, 'A base retornou um arquivo inválido.'); }
   if (path === 'index.json' ? !Array.isArray(data) : (!data || Array.isArray(data) || typeof data !== 'object')) return error(502, 'Formato de dados inválido.');
