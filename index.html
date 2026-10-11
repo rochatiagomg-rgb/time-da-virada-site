@@ -30,7 +30,7 @@
         <div id="slogan" class="slogan">Nós somos o time da virada, nós somos o time do amor</div>
       </div>
       <div class="craques-mini">
-        <span>⭐</span>
+        <span>★</span>
         <div><b id="craquesCount">0</b><small>craques</small></div>
       </div>
     </div>
@@ -49,7 +49,7 @@
           <p class="hint">A consulta reúne resultado eleitoral, locais de votação, mapa, diagnóstico, propostas e retrospecto.</p>
         </div>
         <div class="craques-card">
-          <div class="craques-star">⭐</div>
+          <div class="craques-star">★</div>
           <div>
             <strong id="craquesBig">0</strong>
             <span>Número de craques que acessaram a plataforma</span>
@@ -61,6 +61,7 @@
 
     <section id="agendaPreview" class="section-card no-export">
       <style>
+        .craques-mini>span,.craques-star{color:#ef5350}
         #agendaPreview{margin:24px 0;border-color:#8c794b}
         #agendaPreview .agenda-banner{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
         #agendaPreview .agenda-badge{border:1px solid #8c794b;border-radius:99px;padding:7px 12px;color:#efce77;font-size:12px}
@@ -81,15 +82,15 @@
         @media(max-width:720px){#agendaPreview .agenda-layout,#agendaPreview .agenda-form{grid-template-columns:1fr}#agendaPreview .agenda-map{height:300px}}
       </style>
       <div class="agenda-banner">
-        <div><div class="eyebrow">AGENDA PÚBLICA · ENCONTROS COMUNITÁRIOS</div><h2>Craques em Campo</h2><p class="muted">Cada encontro faz parte da nossa história.</p></div>
+        <div><div class="eyebrow">AGENDA PÚBLICA · ENCONTROS DA VIRADA</div><h2>Craques em Campo</h2><p class="muted">Cada encontro faz parte da nossa história.</p></div>
         <span class="agenda-badge">PRÉVIA · DADOS FICTÍCIOS</span>
       </div>
-      <p class="agenda-notice">Esta é uma demonstração para aprovação. Nenhum envio é armazenado ou publicado. Os exemplos abaixo são fictícios e não representam eventos reais.</p>
+      <p class="agenda-notice">A seção já está integrada à preview do site. O registro de eventos ainda está em teste: os envios não são salvos. O mapa mostra exemplos fictícios. O recebimento e a publicação de eventos reais serão habilitados após a configuração do armazenamento e da revisão administrativa.</p>
       <details id="agendaExplore">
         <summary>Ver mapa e exemplos da agenda</summary>
         <div class="agenda-layout">
           <div><h3>Mapa das Participações</h3><p class="muted">Mapa exclusivo desta agenda. Não utiliza os locais de votação da consulta.</p><div id="agendaMap" class="agenda-map" aria-label="Mapa de eventos fictícios em Belo Horizonte"></div><p class="hint">Pontos dourados: eventos fictícios da demonstração.</p></div>
-          <div><h3>Encontros da comunidade</h3><div id="agendaExamples"></div><div class="agenda-notice"><strong>Aquecimento</strong><p>Os resultados aparecerão aqui após a revisão dos primeiros registros.</p><small>Sem classificação individual. Quantidades são estimativas de participações, não de pessoas únicas.</small></div></div>
+          <div><h3>Encontros da Virada</h3><div id="agendaExamples"></div><div class="agenda-notice"><strong>Aquecimento</strong><p>Os resultados aparecerão aqui após a revisão dos primeiros registros.</p><small>Sem classificação individual. Quantidades são estimativas de participações, não de pessoas únicas.</small></div></div>
         </div>
       </details>
       <details id="agendaRegister" open>
@@ -111,7 +112,7 @@
       </details>
       <details>
         <summary>Prévia do painel de revisão</summary>
-        <p class="agenda-notice">Controles ilustrativos. Na versão real, este painel exigirá acesso administrativo protegido. Um registro pendente não aparece no mapa público.</p>
+        <p class="agenda-notice">Este é apenas o modelo do painel. O painel administrativo real será separado e protegido por acesso exclusivo do responsável. Nele você poderá aprovar, ocultar e restaurar registros; eventos pendentes não aparecerão no mapa público.</p>
         <div class="agenda-event agenda-moderation"><h4>Registro fictício para revisão</h4><p>Oficina de cidadania · Belo Horizonte — MG · 15 participantes estimados</p><p id="agendaReviewState" role="status">Estado: pendente de revisão</p><button type="button" class="secondary-button" data-review="aprovado">Simular aprovação</button><button type="button" class="secondary-button" data-review="oculto">Simular ocultação</button><button type="button" class="secondary-button" data-review="pendente de revisão">Restaurar simulação</button></div>
       </details>
       <script>
