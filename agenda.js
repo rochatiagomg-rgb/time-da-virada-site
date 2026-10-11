@@ -20,7 +20,7 @@
   root.querySelector('#agendaSection').addEventListener('toggle',event=>{
     if(event.target.open&&map)requestAnimationFrame(()=>{map.invalidateSize();centerMunicipality();});
   });
-  const notice=(message)=>{feedback.textContent=message;feedback.hidden=false};
+  const notice=(message)=>{feedback.textContent=message;feedback.hidden=false;feedback.scrollIntoView({behavior:'smooth',block:'nearest'})};
   function paragraph(parent,text){const p=document.createElement('p');p.textContent=text;parent.append(p)}
   function renderEvents(){
     list.replaceChildren();
@@ -97,14 +97,23 @@
     if(!selectedLocation){notice('Marque no mapa o local público do evento antes de enviar.');return}
     if(!config?.enabled||!turnstileToken){notice('Aguarde a verificação do formulário.');return}
     const values=new FormData(form);
-    const payload={activity:values.get('activity'),date:values.get('date'),city:values.get('city'),place:values.get('place'),nickname:values.get('nickname'),description:values.get('description'),participants:Number(values.get('participants')),consent:values.get('consent')==='on',publicPlace:values.get('publicPlace')==='on',website:values.get('website'),token:turnstileToken,...selectedLocation};
-    submit.disabled=true;
+    const payload={activity:values.get('activity'),date:values.get('date'),city:values.get('city'),place:values.get('place'),nickname:values.get('nickname'),description:values.get('description'),participants:Number(values.get('participants')),consent:values.get('consent')==='on',publicPlace:values.get('consent')==='on',website:values.get('website'),token:turnstileToken,...selectedLocation};
+    submit.disabled=true;submit.textContent='Enviando…';
     try{
       const response=await fetch('/api/agenda/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       const result=await response.json();if(!response.ok)throw Error(result.error||'Não foi possível enviar.');
-      notice(result.message+' Protocolo: '+result.id);form.reset();selectedLocation=undefined;selectedMarker?.remove();selectedMarker=undefined;root.querySelector('#agendaLocation').textContent='Nenhum local selecionado.';
+      feedback.hidden=true;
+      root.querySelector('#agendaProtocol').textContent=result.id;
+      root.querySelector('#agendaSuccessNickname').textContent=payload.nickname?'Nome de craque: '+payload.nickname:'';
+      form.hidden=true;
+      const success=root.querySelector('#agendaSuccess');success.hidden=false;success.focus();success.scrollIntoView({behavior:'smooth',block:'center'});
+      form.reset();selectedLocation=undefined;selectedMarker?.remove();selectedMarker=undefined;root.querySelector('#agendaLocation').textContent='Nenhum local selecionado.';
     }catch(error){notice(error.message||'Não foi possível enviar. Tente novamente.')}
-    finally{turnstileToken='';if(widget!==undefined)turnstile.reset(widget);updateSubmit()}
+    finally{submit.textContent='Enviar encontro';turnstileToken='';if(widget!==undefined)turnstile.reset(widget);updateSubmit()}
+  });
+  root.querySelector('#agendaAnother').addEventListener('click',()=>{
+    root.querySelector('#agendaSuccess').hidden=true;feedback.hidden=true;form.hidden=false;
+    form.elements.nickname.focus();form.scrollIntoView({behavior:'smooth',block:'start'});prepareProtection();
   });
   renderEvents();updateSubmit();initialize();
 })();
