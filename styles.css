@@ -328,3 +328,30 @@ button,a,summary{transition:background-color .15s,border-color .15s}
 }
 @media(prefers-reduced-motion:reduce){button,a,summary{transition:none}.spinner{animation-duration:2s}}
 
+
+/* Acabamento editorial do resumo, mantendo papel claro. */
+.pdf-export-root .section-card{border:1px solid #CAD8CF;border-top:3px solid #126444;border-radius:12px;padding:22px;margin-bottom:3px}
+.pdf-export-root .section-heading{border-bottom:1px solid #D2DED4;padding-bottom:14px;margin-bottom:18px}
+.pdf-export-root .section-heading h2{font-size:27px;color:#173C2B;letter-spacing:-.03em}
+.pdf-export-root .eyebrow{font-size:11px;letter-spacing:.13em;color:#526F5F}
+.pdf-export-root .municipio-title{font-size:36px}
+.pdf-export-root .hero-card{border-top-color:#B39443;background:#F6F5ED}
+.pdf-export-root .proposal,.pdf-export-root .retro{border-radius:10px;padding:22px;border-color:#C8D7CC;background:#fff}
+.pdf-export-root .proposal h4,.pdf-export-root .retro h4{font-size:20px;line-height:1.35;color:#173C2B}
+.pdf-export-root .proposal p,.pdf-export-root .retro p{font-size:15px;line-height:1.6;color:#344C3F}
+.pdf-export-root .proposal-head{padding-bottom:12px}
+.pdf-export-root .proposal-topic{font-size:11px;line-height:1.5}
+.pdf-export-root .source{font-size:12px;color:#4D6357}
+.pdf-export-root .source a{color:#126444;text-decoration:underline}
+.pdf-export-root .theme-block,.pdf-export-root .retro-pair{background:#F4F7F2;padding:18px;border:1px solid #DCE5DC;border-radius:12px;margin-bottom:16px}
+.pdf-export-root .area-label{background:#F6EED6;color:#705619;border-color:#E4D7AF;font-size:10px;padding:5px 9px}
+.pdf-export-root .retro.gol{border-top:4px solid #126444}
+.pdf-export-root .retro.murcha{border-top:4px solid #AC263B}
+.pdf-export-root .status{font-size:11px;padding:6px 9px}
+.pdf-export-root .game-plan-card{padding:20px;border-top:3px solid #B39443}
+.pdf-export-root .game-plan-card h4{font-size:19px}
+.pdf-export-root .game-plan-card p{font-size:15px;color:#344C3F}
+.pdf-export-root .indicator-chip{padding:17px}
+.pdf-export-root .indicator-chip strong{font-size:25px}
+.pdf-export-root .score-meta b{font-size:21px}
+.pdf-export-root .soft-card p,.pdf-export-root .muted{color:#344C3F}
