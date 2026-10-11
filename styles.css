@@ -355,3 +355,33 @@ button,a,summary{transition:background-color .15s,border-color .15s}
 .pdf-export-root .indicator-chip strong{font-size:25px}
 .pdf-export-root .score-meta b{font-size:21px}
 .pdf-export-root .soft-card p,.pdf-export-root .muted{color:#344C3F}
+
+/* Compact counter and progressive municipal detail. */
+.search-grid{grid-template-columns:minmax(0,1fr)}
+.craques-mini{margin-left:auto;display:flex;align-items:center;gap:8px;max-width:230px;padding:8px 12px}
+.craques-mini>span{font-size:25px;color:#ef5350}
+.craques-mini b{font-size:23px;line-height:1}
+.craques-mini small{font-size:10px;line-height:1.35;max-width:160px;display:block}
+.municipal-disclosure>summary{cursor:pointer;list-style:none;position:relative;padding-right:32px}
+.municipal-disclosure>summary::-webkit-details-marker{display:none}
+.municipal-disclosure>summary:after{content:'+';position:absolute;right:0;top:8px;font-size:25px;color:#efce77}
+.municipal-disclosure[open]>summary:after{content:'−'}
+.municipal-disclosure>summary .section-heading{margin-bottom:6px}
+.disclosure-hint{display:block;color:#b5c9bd;margin-bottom:8px}
+.municipal-disclosure[open]>summary{margin-bottom:18px}
+.municipio-overview{color:#efce77;font-weight:700;line-height:1.6}
+.pdf-export-root .municipal-disclosure>summary:after,.pdf-export-root .disclosure-hint{display:none}
+@media(max-width:720px){
+ .logo-wrap{flex-wrap:wrap;gap:10px}
+ .craques-mini{max-width:none;margin:0;padding:6px 10px;gap:7px}
+ .craques-mini b{font-size:19px}
+ .craques-mini>span{font-size:22px}
+ .craques-mini small{font-size:10px;max-width:200px}
+ .search-card,.section-card{padding:18px}
+ .municipal-disclosure:not([open]) .section-heading h2{font-size:20px}
+ .indicator-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .indicator-chip{min-width:0;padding:10px}
+ .indicator-chip strong{font-size:18px;overflow-wrap:anywhere}
+ #agendaPreview .agenda-banner h2{font-size:22px}
+ #agendaPreview .agenda-badge{font-size:10px;padding:5px 8px}
+}
