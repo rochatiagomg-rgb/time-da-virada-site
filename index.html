@@ -58,6 +58,105 @@
       </div>
     </section>
 
+
+    <section id="agendaPreview" class="section-card no-export">
+      <style>
+        #agendaPreview{margin:24px 0;border-color:#8c794b}
+        #agendaPreview .agenda-banner{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+        #agendaPreview .agenda-badge{border:1px solid #8c794b;border-radius:99px;padding:7px 12px;color:#efce77;font-size:12px}
+        #agendaPreview .agenda-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:20px;margin-top:20px}
+        #agendaPreview .agenda-map{height:340px;border-radius:16px;background:#182e26;overflow:hidden;color:#182e26}
+        #agendaPreview .agenda-event{background:#182e26;border:1px solid #30483b;border-radius:14px;padding:16px;margin-bottom:12px}
+        #agendaPreview .agenda-event h4{margin:0 0 8px;color:#efce77}
+        #agendaPreview .agenda-event p{margin:6px 0;font-size:14px}
+        #agendaPreview summary{cursor:pointer;color:#efce77;font-weight:700;padding:14px 0}
+        #agendaPreview .agenda-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+        #agendaPreview label{display:flex;flex-direction:column;gap:7px;font-size:14px}
+        #agendaPreview input,#agendaPreview textarea{width:100%;box-sizing:border-box;background:#091411;color:#edf4ec;border:1px solid #496054;border-radius:10px;padding:12px;font:inherit}
+        #agendaPreview .agenda-wide{grid-column:1/-1}
+        #agendaPreview .agenda-check{flex-direction:row;align-items:flex-start}
+        #agendaPreview .agenda-check input{width:auto;margin-top:4px}
+        #agendaPreview .agenda-notice{padding:14px;border-radius:12px;background:#182e26;color:#c6d5cb;line-height:1.6}
+        #agendaPreview .agenda-moderation button{margin:6px 8px 6px 0}
+        @media(max-width:720px){#agendaPreview .agenda-layout,#agendaPreview .agenda-form{grid-template-columns:1fr}#agendaPreview .agenda-map{height:300px}}
+      </style>
+      <div class="agenda-banner">
+        <div><div class="eyebrow">AGENDA PÚBLICA · ENCONTROS COMUNITÁRIOS</div><h2>Craques em Campo</h2><p class="muted">Cada encontro faz parte da nossa história.</p></div>
+        <span class="agenda-badge">PRÉVIA · DADOS FICTÍCIOS</span>
+      </div>
+      <p class="agenda-notice">Esta é uma demonstração para aprovação. Nenhum envio é armazenado ou publicado. Os exemplos abaixo são fictícios e não representam eventos reais.</p>
+      <details id="agendaExplore">
+        <summary>Ver mapa e exemplos da agenda</summary>
+        <div class="agenda-layout">
+          <div><h3>Mapa das Participações</h3><p class="muted">Mapa exclusivo desta agenda. Não utiliza os locais de votação da consulta.</p><div id="agendaMap" class="agenda-map" aria-label="Mapa de eventos fictícios em Belo Horizonte"></div><p class="hint">Pontos dourados: eventos fictícios da demonstração.</p></div>
+          <div><h3>Encontros da comunidade</h3><div id="agendaExamples"></div><div class="agenda-notice"><strong>Aquecimento</strong><p>Os resultados aparecerão aqui após a revisão dos primeiros registros.</p><small>Sem classificação individual. Quantidades são estimativas de participações, não de pessoas únicas.</small></div></div>
+        </div>
+      </details>
+      <details id="agendaRegister">
+        <summary>Registrar um evento público · experimentar</summary>
+        <p class="muted">Sem cadastro. Preencha apenas informações que possam ser publicadas sobre o evento.</p>
+        <form id="agendaForm" class="agenda-form">
+          <label>Nome da atividade<input name="activity" maxlength="100" placeholder="Ex.: Encontro comunitário na praça" required></label>
+          <label>Data da atividade<input name="date" type="date" required></label>
+          <label>Município e UF<input name="city" maxlength="100" placeholder="Ex.: Belo Horizonte — MG" required></label>
+          <label>Local público<input name="place" maxlength="160" placeholder="Ex.: Praça da Liberdade" required></label>
+          <label>Número estimado de participantes<input name="participants" type="number" min="1" max="100000" step="1" required></label>
+          <label>Seu nome ou apelido · opcional e privado<input name="sender" maxlength="80" autocomplete="off" placeholder="Ex.: R10 de Comercinho"></label>
+          <label class="agenda-wide">Descrição breve<textarea name="description" rows="3" maxlength="500" placeholder="Descreva o encontro. Não inclua nomes, contatos ou dados pessoais de outras pessoas." required></textarea></label>
+          <label class="agenda-wide agenda-check"><input type="checkbox" required><span>Entendo que esta é uma simulação e que nenhum dado será salvo. Não incluí informações pessoais de terceiros.</span></label>
+          <div class="agenda-wide"><button class="primary-button" type="submit">Simular envio para revisão</button></div>
+        </form>
+        <p id="agendaFeedback" class="agenda-notice" role="status" hidden></p>
+      </details>
+      <details>
+        <summary>Prévia do painel de revisão</summary>
+        <p class="agenda-notice">Controles ilustrativos. Na versão real, este painel exigirá acesso administrativo protegido. Um registro pendente não aparece no mapa público.</p>
+        <div class="agenda-event agenda-moderation"><h4>Registro fictício para revisão</h4><p>Oficina de cidadania · Belo Horizonte — MG · 15 participantes estimados</p><p id="agendaReviewState" role="status">Estado: pendente de revisão</p><button type="button" class="secondary-button" data-review="aprovado">Simular aprovação</button><button type="button" class="secondary-button" data-review="oculto">Simular ocultação</button><button type="button" class="secondary-button" data-review="pendente de revisão">Restaurar simulação</button></div>
+      </details>
+      <script>
+      (() => {
+        const root=document.getElementById('agendaPreview');
+        const examples=[
+          {title:'Encontro comunitário na praça',place:'Praça da Liberdade · Belo Horizonte — MG',date:'Exemplo sem data real',count:24,coords:[-19.9318,-43.9378]},
+          {title:'Oficina cultural aberta',place:'Praça da Estação · Belo Horizonte — MG',date:'Exemplo sem data real',count:18,coords:[-19.9165,-43.9345]}
+        ];
+        const list=root.querySelector('#agendaExamples');
+        examples.forEach(event=>{
+          const card=document.createElement('article');card.className='agenda-event';
+          const title=document.createElement('h4');title.textContent=event.title;card.append(title);
+          [event.place,event.date,event.count+' participantes estimados','EXEMPLO FICTÍCIO'].forEach(text=>{const p=document.createElement('p');p.textContent=text;card.append(p)});
+          list.append(card);
+        });
+        let agendaMap;
+        root.querySelector('#agendaExplore').addEventListener('toggle',event=>{
+          if(!event.target.open)return;
+          if(!window.L){root.querySelector('#agendaMap').textContent='Mapa indisponível no momento. Os exemplos continuam disponíveis ao lado.';return;}
+          if(!agendaMap){
+            agendaMap=L.map('agendaMap').setView([-19.924,-43.936],14);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(agendaMap);
+            examples.forEach(item=>{
+              const popup=document.createElement('div');const title=document.createElement('strong');title.textContent=item.title;popup.append(title);
+              const note=document.createElement('p');note.textContent='Exemplo fictício · '+item.count+' participantes estimados';popup.append(note);
+              L.circleMarker(item.coords,{radius:9,color:'#69501f',fillColor:'#efce77',fillOpacity:1,weight:2}).addTo(agendaMap).bindPopup(popup);
+            });
+          }
+          requestAnimationFrame(()=>agendaMap.invalidateSize());
+        });
+        root.querySelector('#agendaForm').addEventListener('submit',event=>{
+          event.preventDefault();
+          const form=event.target;
+          if(!form.reportValidity())return;
+          const values=new FormData(form);
+          const feedback=root.querySelector('#agendaFeedback');
+          feedback.textContent='Simulação recebida: “'+values.get('activity')+'” — '+values.get('participants')+' participantes estimados. Na versão real, este registro aguardará revisão antes de aparecer no mapa. Nenhum dado foi salvo nesta prévia.';
+          feedback.hidden=false;
+          form.reset();
+        });
+        root.querySelectorAll('[data-review]').forEach(button=>button.addEventListener('click',()=>{root.querySelector('#agendaReviewState').textContent='Estado simulado: '+button.dataset.review+'. Nenhum registro real foi alterado.'}));
+      })();
+      </script>
+    </section>
+
     <div id="content" class="stack hidden">
       <section class="section-card hero-card">
         <div class="section-heading">
