@@ -1,0 +1,23 @@
+[
+  {
+    "ordem": 1,
+    "titulo": "Entre para o time",
+    "texto": "Participe do grupo e acompanhe informações, materiais e mobilizações da campanha.",
+    "link": "https://chat.whatsapp.com/Er8OT9PWLDK6gda66saYQ5",
+    "textoBotao": "Participar"
+  },
+  {
+    "ordem": 2,
+    "titulo": "Materiais da campanha",
+    "texto": "Acesse cards, vídeos e outros materiais para compartilhar nas suas redes.",
+    "link": "https://drive.google.com/drive/folders/1LbYfXCnnI7-APqRltwTfp7GbAxsdbCnz",
+    "textoBotao": "Ver materiais"
+  },
+  {
+    "ordem": 3,
+    "titulo": "MANUAL DA VIRADA",
+    "texto": "Como transformar conversa em voto, com\no que a pesquisa mostra que funciona.",
+    "link": "https://drive.google.com/file/d/1U0UDg5e16UDIHbS4zoXMS05LG_WwMvB9/view",
+    "textoBotao": "Ver Manual"
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "key": "TSE_ELEITORADO_LOCAL",
+    "nome": "Eleitorado por local de votação 2026",
+    "orgao": "TSE",
+    "uso": "Local, endereço/identificação e eleitorado por local de votação",
+    "granularidade": "Local de votação",
+    "atualizacao": "2026",
+    "link": "https://dadosabertos.tse.jus.br/dataset/eleitorado-2026/resource/300626b4-2b24-4d2e-b4fc-46b569cfffe5",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "TSE_PERFIL_SECAO",
+    "nome": "Perfil do eleitorado por seção eleitoral 2026",
+    "orgao": "TSE",
+    "uso": "Perfil do eleitorado da seção",
+    "granularidade": "Seção eleitoral",
+    "atualizacao": "2026",
+    "link": "https://dadosabertos.tse.jus.br/dataset/eleitorado-2026",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "TSE_RESULTADOS",
+    "nome": "Resultados eleitorais 2026",
+    "orgao": "TSE",
+    "uso": "Votação por seção e apuração município/zona/seção",
+    "granularidade": "Seção eleitoral",
+    "atualizacao": "Diária durante totalização",
+    "link": "https://dadosabertos.tse.jus.br/dataset/resultados-2026",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "TSE_BU",
+    "nome": "Boletim de Urna 2026",
+    "orgao": "TSE",
+    "uso": "Resultados detalhados por urna/seção",
+    "granularidade": "Seção eleitoral",
+    "atualizacao": "1º e 2º turnos",
+    "link": "https://dadosabertos.tse.jus.br/dataset/resultados-2026-boletim-de-urna",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "IBGE_CENSO_2022",
+    "nome": "Censo Demográfico 2022 / setores censitários",
+    "orgao": "IBGE",
+    "uso": "População, idade, urbanização, renda e entorno",
+    "granularidade": "Setor censitário / município",
+    "atualizacao": "Estrutural",
+    "link": "https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "IBGE_PIB_MUNICIPIOS",
+    "nome": "PIB dos Municípios / SIDRA",
+    "orgao": "IBGE",
+    "uso": "PIB per capita, VAB agro e composição econômica",
+    "granularidade": "Município",
+    "atualizacao": "Anual",
+    "link": "https://sidra.ibge.gov.br/",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "IBGE_CENSO_AGRO",
+    "nome": "Censo Agropecuário 2017",
+    "orgao": "IBGE",
+    "uso": "% de estabelecimentos da agricultura familiar",
+    "granularidade": "Município",
+    "atualizacao": "Estrutural",
+    "link": "https://sidra.ibge.gov.br/",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "MDA_CAF",
+    "nome": "Dados agregados do CAF/DAP",
+    "orgao": "MDA",
+    "uso": "Cadastros ativos da agricultura familiar por município",
+    "granularidade": "Município",
+    "atualizacao": "Mensal",
+    "link": "https://www.gov.br/mda/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/cadastro-nacional-da-agricultura-familiar/transparencia",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "MAPA_EMPRESAS",
+    "nome": "Mapa de Empresas",
+    "orgao": "Governo Federal",
+    "uso": "MEIs/empresas por município, atividade e evolução",
+    "granularidade": "Município",
+    "atualizacao": "Painel atualizado",
+    "link": "https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas",
+    "modo": "Extração/ETL"
+  },
+  {
+    "key": "RFB_MEI",
+    "nome": "Painel/dados de MEI",
+    "orgao": "Receita Federal",
+    "uso": "Quantidade e estatísticas de MEI",
+    "granularidade": "Município",
+    "atualizacao": "Atualização do painel",
+    "link": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cadastros",
+    "modo": "Extração/ETL"
+  },
+  {
+    "key": "MDS_BF_CADUNICO",
+    "nome": "Bolsa Família e Cadastro Único",
+    "orgao": "MDS",
+    "uso": "Famílias, alcance e transferências",
+    "granularidade": "Município",
+    "atualizacao": "Mensal",
+    "link": "https://www.gov.br/mds/pt-br/orgaos/SAGICAD/dados-e-ferramentas-informacionais/dados-e-ferramentas-do-cadastro-unico/",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "INSS_BENEFICIOS",
+    "nome": "Benefícios emitidos/mantidos",
+    "orgao": "INSS",
+    "uso": "Aposentadorias, pensões, BPC e valores",
+    "granularidade": "Município de residência",
+    "atualizacao": "Mensal",
+    "link": "https://dadosabertos.inss.gov.br/pt_BR/dataset/beneficios-emitidos-plano-de-dados-abertos-jun-2023-a-jun-2025",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "MTE_NOVO_CAGED",
+    "nome": "Novo Caged",
+    "orgao": "MTE",
+    "uso": "Estoque e tendência do emprego formal",
+    "granularidade": "Município",
+    "atualizacao": "Mensal",
+    "link": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/o-pdet/o-que-e-o-novo-caged",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "MTE_RAIS",
+    "nome": "RAIS 2025",
+    "orgao": "MTE",
+    "uso": "Estoque consolidado, vínculos e remuneração",
+    "granularidade": "Município",
+    "atualizacao": "Anual",
+    "link": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/rais/rais-2025/rais-2025",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "INEP_IDEB",
+    "nome": "IDEB 2025",
+    "orgao": "INEP",
+    "uso": "Aprendizagem por município e etapa",
+    "granularidade": "Município / escola",
+    "atualizacao": "Bienal",
+    "link": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb/resultados/2005-2025",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "INEP_CENSO_ESCOLAR",
+    "nome": "Censo Escolar",
+    "orgao": "INEP",
+    "uso": "Matrículas, abandono/permanência e creches",
+    "granularidade": "Município / escola",
+    "atualizacao": "Anual",
+    "link": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "MS_VACINACAO",
+    "nome": "Cobertura vacinal / PNI",
+    "orgao": "Ministério da Saúde",
+    "uso": "Cobertura vacinal municipal",
+    "granularidade": "Município",
+    "atualizacao": "Contínua/semanal",
+    "link": "https://www.gov.br/saude/pt-br/vacinacao/paineis-de-vacinacao",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "DATASUS_CNES",
+    "nome": "CNES / DATASUS",
+    "orgao": "Ministério da Saúde",
+    "uso": "Leitos e profissionais/estabelecimentos de saúde",
+    "granularidade": "Município",
+    "atualizacao": "Mensal",
+    "link": "https://datasus.saude.gov.br/cnes-estabelecimentos",
+    "modo": "ETL automático"
+  },
+  {
+    "key": "SINISA",
+    "nome": "SINISA 2025",
+    "orgao": "Ministério das Cidades",
+    "uso": "Água, esgoto e resíduos",
+    "granularidade": "Município/prestador",
+    "atualizacao": "Anual",
+    "link": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa/resultados-sinisa-2025",
+    "modo": "ETL automático"
+  }
+]

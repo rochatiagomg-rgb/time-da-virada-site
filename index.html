@@ -1,76 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Time da Virada</title>
-  <meta name="description" content="Time da Virada — site em preparação.">
-  <style>
-    :root {
-      --verde: #006b3c;
-      --amarelo: #f6b800;
-      --vermelho: #d71920;
-      --texto: #17352a;
-      --fundo: #fffdf7;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-    }
-    main {
-      width: min(92vw, 760px);
-      text-align: center;
-      padding: 48px 24px;
-    }
-    .marca {
-      font-weight: 900;
-      font-size: clamp(2.6rem, 8vw, 5.5rem);
-      line-height: .92;
-      letter-spacing: -0.05em;
-      margin: 0 0 22px;
-    }
-    .verde { color: var(--verde); }
-    .amarelo { color: var(--amarelo); }
-    .estrela { color: var(--vermelho); }
-    p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      line-height: 1.55;
-      margin: 0 auto;
-      max-width: 560px;
-    }
-    .linha {
-      width: 150px;
-      height: 8px;
-      border-radius: 99px;
-      margin: 28px auto;
-      background: linear-gradient(90deg,
-        var(--verde) 0 40%,
-        var(--amarelo) 40% 70%,
-        var(--vermelho) 70% 100%);
-    }
-    small {
-      display: block;
-      margin-top: 32px;
-      opacity: .68;
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <main>
-    <h1 class="marca">
-      <span class="verde">TIME DA</span><br>
-      <span class="verde">VIRA</span><span class="amarelo">DA</span>
-      <span class="estrela">★</span>
-    </h1>
-    <div class="linha" aria-hidden="true"></div>
-    <p>O novo site está sendo preparado. A versão completa será publicada aqui em breve.</p>
-    <small>timedavirada.app.br</small>
+  <div id="loading" class="loading show">
+    <div class="spinner"></div>
+    <strong id="loadingText">Carregando...</strong>
+  </div>
+
+  <header class="topbar">
+    <div class="logo-wrap">
+      <div class="logo-hat" aria-hidden="true">
+        <svg viewBox="0 0 130 72">
+          <ellipse cx="65" cy="52" rx="58" ry="15" fill="#F2D39B"/>
+          <path d="M35 48 C38 26,44 9,65 8 C86 9,92 26,95 48 Z" fill="#F6DEAA"/>
+          <path d="M38 40 C55 45,77 45,93 40 L95 48 C78 53,54 53,35 48 Z" fill="#151515"/>
+          <path d="M45 18 C58 13,74 13,86 19" stroke="#E7C382" stroke-width="3" fill="none"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-title">TIME DA <span>VIRADA</span></div>
+        <div id="slogan" class="slogan">Nós somos o time da virada, nós somos o time do amor</div>
+      </div>
+      <div class="craques-mini">
+        <span>★</span>
+        <div><b id="craquesCount">0</b><small>craques</small></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="search-card no-export">
+      <div class="search-grid">
+        <div>
+          <div class="eyebrow">CONSULTA TERRITORIAL</div>
+          <h1>Qual é o município?</h1>
+          <div class="autocomplete">
+            <input id="municipioInput" type="text" placeholder="Comece a digitar o nome do município..." autocomplete="off">
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+          <p class="hint">A consulta reúne resultado eleitoral, locais de votação, mapa, diagnóstico, propostas e retrospecto.</p>
+        </div>
+        <div class="craques-card">
+          <div class="craques-star">★</div>
+          <div>
+            <strong id="craquesBig">0</strong>
+            <span>Número de craques que acessaram a plataforma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="agendaPreview" class="section-card no-export">
+      <style>
+        .craques-mini>span,.craques-star{color:#ef5350}
+        #agendaPreview{margin:24px 0;border-color:#8c794b}
+        #agendaPreview .agenda-banner{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+        #agendaPreview .agenda-badge{border:1px solid #8c794b;border-radius:99px;padding:7px 12px;color:#efce77;font-size:12px}
+        #agendaPreview .agenda-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:20px;margin-top:20px}
+        #agendaPreview .agenda-map{height:340px;border-radius:16px;background:#182e26;overflow:hidden;color:#182e26}
+        #agendaPreview .agenda-event{background:#182e26;border:1px solid #30483b;border-radius:14px;padding:16px;margin-bottom:12px}
+        #agendaPreview .agenda-event h4{margin:0 0 8px;color:#efce77}
+        #agendaPreview .agenda-event p{margin:6px 0;font-size:14px}
+        #agendaPreview summary{cursor:pointer;color:#efce77;font-weight:700;padding:14px 0}
+        #agendaPreview .agenda-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+        #agendaPreview label{display:flex;flex-direction:column;gap:7px;font-size:14px}
+        #agendaPreview input,#agendaPreview textarea{width:100%;box-sizing:border-box;background:#091411;color:#edf4ec;border:1px solid #496054;border-radius:10px;padding:12px;font:inherit}
+        #agendaPreview .agenda-wide{grid-column:1/-1}
+        #agendaPreview .agenda-check{flex-direction:row;align-items:flex-start}
+        #agendaPreview .agenda-check input{width:auto;margin-top:4px}
+        #agendaPreview .agenda-notice{padding:14px;border-radius:12px;background:#182e26;color:#c6d5cb;line-height:1.6}
+        #agendaPreview .agenda-moderation button{margin:6px 8px 6px 0}
+        @media(max-width:720px){#agendaPreview .agenda-layout,#agendaPreview .agenda-form{grid-template-columns:1fr}#agendaPreview .agenda-map{height:300px}}
+      </style>
+      <div class="agenda-banner">
+        <div><div class="eyebrow">AGENDA PÚBLICA · ENCONTROS DA VIRADA</div><h2>Craques em Campo</h2><p class="muted">Cada encontro faz parte da nossa história.</p></div>
+        <span class="agenda-badge">EVENTOS PÚBLICOS</span>
+      </div>
+      <p class="agenda-notice">Registre um evento público já realizado. Os envios passam pela revisão do responsável antes de aparecer no mapa. Quantidades de participantes são estimativas informadas pelo público.</p>
+      <details id="agendaExplore">
+        <summary>Ver mapa dos encontros</summary>
+        <div class="agenda-layout">
+          <div><h3>Mapa das Participações</h3><div id="agendaMap" class="agenda-map" aria-label="Mapa dos eventos públicos aprovados"></div><p class="hint">Pontos dourados: eventos aprovados. Ponto azul: local escolhido para seu envio.</p></div>
+          <div><h3>Encontros da Virada</h3><div id="agendaExamples"></div><div class="agenda-notice"><strong>Aquecimento</strong><p>Os resultados aparecerão aqui após a revisão dos primeiros registros.</p><small>Sem classificação individual. Quantidades são estimativas de participações, não de pessoas únicas.</small></div></div>
+        </div>
+      </details>
+      <details id="agendaRegister" open>
+        <summary>Registro de craques</summary>
+        <p class="muted">Sem cadastro. Preencha apenas informações que possam ser publicadas sobre o evento.</p>
+        <form id="agendaForm" class="agenda-form">
+          <label>Nome da atividade<input name="activity" maxlength="100" placeholder="Ex.: Encontro comunitário na praça" required></label>
+          <label>Data da atividade<input name="date" type="date" required></label>
+          <label>Município e UF<input name="city" maxlength="100" placeholder="Ex.: Belo Horizonte — MG" required></label>
+          <label>Local público<input name="place" maxlength="160" placeholder="Ex.: Praça da Liberdade" required></label>
+          <label>Número estimado de participantes<input name="participants" type="number" min="1" max="100000" step="1" required></label>
+          <label>Nome de craque · público e opcional<input name="nickname" maxlength="80" autocomplete="off" placeholder="Use aqui o seu nome de craque" aria-describedby="agendaNicknameHelp"><small id="agendaNicknameHelp">Escolha um apelido fictício. Não use nome completo, telefone ou e-mail. Seu apelido aparecerá junto ao evento após a aprovação.</small></label>
+          <label class="agenda-wide">Descrição breve<textarea name="description" rows="3" maxlength="500" placeholder="Descreva o encontro. Não inclua nomes, contatos ou dados pessoais de outras pessoas." required></textarea></label>
+          <label class="agenda-wide agenda-check"><input type="checkbox" name="consent" required><span>Li as regras abaixo e autorizo publicar os dados do evento e meu apelido fictício, se informado, após revisão. Não incluí informações pessoais de terceiros.</span></label>
+          <div class="agenda-wide agenda-notice"><strong>Local do encontro</strong><p>Selecione no mapa um local público. Não marque residências nem sua localização pessoal.</p><button id="agendaChooseLocation" class="secondary-button" type="button">Escolher local no mapa</button> <button id="agendaLocate" class="secondary-button" type="button">Centralizar na minha região</button><p id="agendaLocation" role="status">Nenhum local selecionado.</p></div>
+          <label class="agenda-wide agenda-check"><input type="checkbox" name="publicPlace" required><span>Confirmo que o ponto escolhido corresponde a um local público do evento.</span></label>
+          <label style="display:none" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          <div class="agenda-wide" id="agendaProtection"></div>
+          <div class="agenda-wide"><button class="primary-button" type="submit" disabled>Enviar para revisão</button></div>
+        </form>
+        <p id="agendaFeedback" class="agenda-notice" role="status" hidden></p>
+        <details><summary>Regras de participação e publicação</summary><p>Esta agenda reúne eventos públicos de participação cívica, cultural e comunitária. Envie informações verdadeiras sobre eventos já realizados. Não publique dados pessoais de terceiros, endereços privados, conteúdo ofensivo, contatos com eleitores, opiniões políticas de participantes ou relatórios de atuação individual.</p><p>Nome da atividade, descrição, data, município, local público, ponto no mapa, quantidade estimada e apelido fictício opcional serão armazenados para revisão por Tiago Rocha. Somente registros aprovados serão exibidos. O responsável pode ocultar registros abusivos ou incorretos. A agenda não comprova a participação nem contabiliza pessoas únicas.</p><p>Não é necessário fornecer nome real, telefone ou e-mail. A localização do aparelho, quando autorizada, apenas centraliza o mapa. Guarde o protocolo recebido para solicitar uma correção ao responsável.</p></details>
+      </details>
+      <p class="hint"><a href="/admin-agenda/">Acesso do responsável</a></p>
+      <script src="./agenda.js" defer></script>
+    </section>
+
+    <div id="content" class="stack hidden">
+      <section class="section-card hero-card">
+        <div class="section-heading">
+          <div><div class="eyebrow">TERRITÓRIO</div><h2 id="secJogo">O jogo é aqui</h2></div>
+          <span class="pill" id="localTag"></span>
+        </div>
+        <h3 id="municipioNome" class="municipio-title"></h3>
+        <p id="municipioResumo" class="muted">Carregando leitura territorial...</p>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">RESULTADO</div><h2 id="secPlacar">Placar do primeiro tempo</h2></div></div>
+        <div id="placarContent" class="empty-state">Aguardando resultado do TSE.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">LOCAIS DE VOTAÇÃO</div><h2 id="secOnde">Onde o jogo acontece</h2></div></div>
+        <div id="locaisContent" class="empty-state">Aguardando locais de votação.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">MAPA</div><h2 id="secMapa">Mapa de campo</h2></div></div>
+        <div id="miniMap" class="field-map"><div class="map-placeholder">Carregando mapa...</div></div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">DIAGNÓSTICO</div><h2 id="secLeitura">Leitura de jogo</h2></div></div>
+        <div id="indicadoresResumo" class="indicator-strip"></div>
+      </section>
+
+      <section class="section-card hidden no-export" aria-hidden="true">
+        <div class="section-heading"><div><div class="eyebrow">DADOS DO MUNICÍPIO</div><h2 id="secPrancheta">Prancheta técnica</h2></div></div>
+        <div id="cardsContent" class="empty-state">Aguardando indicadores temáticos.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">HISTÓRICO NACIONAL</div><h2 id="secRetrospecto">Retrospecto da partida</h2></div></div>
+        <div id="retrospectoContent" class="empty-state">Preencha GOL_BOLA_MURCHA para os cards aparecerem aqui.</div>
+        <button id="retroMoreBtn" class="secondary-button hidden no-export" type="button">Ver mais</button>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">SEGUNDO TURNO</div><h2 id="secJogoPolitico">O que está em jogo</h2></div></div>
+        <div id="planosContent"></div>
+        <button id="outrosTemasBtn" class="secondary-button hidden no-export" type="button">Ver todas as propostas</button>
+      </section>
+
+      <section class="section-card">
+        <div class="section-heading"><div><div class="eyebrow">SÍNTESE</div><h2 id="secPlano">Plano de jogo</h2></div></div>
+        <div id="planoJogoCards" class="game-plan-grid"></div>
+        <div class="export-actions no-export">
+          <button id="downloadPdfBtn" class="primary-button" type="button">Baixar resumo em PDF</button>
+          <button id="sharePdfBtn" class="secondary-button inline-button" type="button">Enviar PDF / WhatsApp</button>
+        </div>
+        <p class="export-hint no-export">No PDF, os locais de votação entram somente se estiverem abertos na tela.</p>
+      </section>
+
+      <section class="section-card subtle">
+        <div class="section-heading"><div><div class="eyebrow">MÉTODO</div><h2 id="secLimites">Riscos e limites</h2></div></div>
+        <p class="muted">Resultados agregados descrevem municípios e locais de votação; não demonstram, por si só, mudança individual de voto ou causa de abstenção.</p>
+        <button class="link-button no-export" id="fontesBtn" type="button">Fontes e metodologia</button>
+        <div id="fontesContent" class="fontes hidden"></div>
+      </section>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div id="creditoApp">Aplicativo desenvolvido por Tiago Rocha — Engenheiro e mestre pela UFMG</div>
+    <div id="fonteRodape">Fontes: TSE, IBGE e demais bases oficiais indicadas em cada card</div>
+  </footer>
+
+  <script src="./api-adapter.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
