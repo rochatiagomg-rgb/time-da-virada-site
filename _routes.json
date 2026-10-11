@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "include": [
+    "/api/agenda/*",
+    "/admin-agenda/*"
+  ],
+  "exclude": []
+}
