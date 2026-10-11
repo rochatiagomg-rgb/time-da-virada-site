@@ -1003,8 +1003,8 @@ async function renderPdfByBlocks(root){
   const pageW=pdf.internal.pageSize.getWidth();
   const pageH=pdf.internal.pageSize.getHeight();
   const marginX=8;
-  const marginTop=8;
-  const marginBottom=9;
+  const marginTop=10;
+  const marginBottom=15;
   const usableW=pageW-(marginX*2);
   const usableH=pageH-marginTop-marginBottom;
   const gapMm=3;
@@ -1056,6 +1056,10 @@ async function renderPdfByBlocks(root){
     const blockHmm=canvas.height*mmPerPx;
     const scaleX=blockRect.width>0 ? canvas.width/blockRect.width : 1;
     const scaleY=blockRect.height>0 ? canvas.height/blockRect.height : scaleX;
+    const safeBreaks=[...block.querySelectorAll('.retro-pair,.theme-block,.game-plan-card,.analytic-card,.game-block,.indicator-chip,.place-accordion-item')]
+      .map(el=>Math.ceil((el.getBoundingClientRect().bottom-blockRect.top)*scaleY)+2)
+      .filter(px=>px>0 && px<canvas.height)
+      .sort((a,b)=>a-b);
     const canvasLinks=links.map(link=>({
       url:link.url,
       x:link.x*scaleX,
@@ -1080,11 +1084,6 @@ async function renderPdfByBlocks(root){
     // Blocos maiores que uma página são fatiados para evitar canvas/PDF vazio.
     let srcY=0;
     while(srcY<canvas.height){
-      if(y>marginTop+0.5){
-        pdf.addPage();
-        y=marginTop;
-      }
-
       const remainingMm=(pageH-marginBottom)-y;
       let slicePx=Math.floor(remainingMm/mmPerPx);
       if(slicePx<80){
@@ -1093,6 +1092,16 @@ async function renderPdfByBlocks(root){
         slicePx=Math.floor(usableH/mmPerPx);
       }
       slicePx=Math.min(slicePx,canvas.height-srcY);
+      if(srcY+slicePx<canvas.height){
+        const possible=safeBreaks.filter(px=>px>srcY+80 && px<=srcY+slicePx);
+        if(possible.length){
+          slicePx=possible[possible.length-1]-srcY;
+        }else if(y>marginTop+0.5){
+          pdf.addPage();
+          y=marginTop;
+          continue;
+        }
+      }
 
       const piece=document.createElement('canvas');
       piece.width=canvas.width;
@@ -1123,6 +1132,18 @@ async function renderPdfByBlocks(root){
     throw new Error('Nenhum bloco visível foi rasterizado para o PDF.');
   }
 
+  // Rodapé discreto em todas as páginas, sem interferir nos links dos cards.
+  const pages=pdf.internal.getNumberOfPages();
+  for(let page=1;page<=pages;page++){
+    pdf.setPage(page);
+    pdf.setDrawColor(210,222,212);
+    pdf.line(marginX,pageH-11,pageW-marginX,pageH-11);
+    pdf.setFont('helvetica','normal');
+    pdf.setFontSize(8);
+    pdf.setTextColor(83,104,92);
+    pdf.text('Time da Virada | '+state.selected.nome+'/'+state.selected.uf,marginX,pageH-6);
+    pdf.text(page+' / '+pages,pageW-marginX,pageH-6,{align:'right'});
+  }
   return pdf.output('blob');
 }
 
