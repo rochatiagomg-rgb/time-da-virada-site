@@ -92,8 +92,8 @@
           <div><h3>Encontros da comunidade</h3><div id="agendaExamples"></div><div class="agenda-notice"><strong>Aquecimento</strong><p>Os resultados aparecerão aqui após a revisão dos primeiros registros.</p><small>Sem classificação individual. Quantidades são estimativas de participações, não de pessoas únicas.</small></div></div>
         </div>
       </details>
-      <details id="agendaRegister">
-        <summary>Registrar um evento público · experimentar</summary>
+      <details id="agendaRegister" open>
+        <summary>Registro de craques · experimentar</summary>
         <p class="muted">Sem cadastro. Preencha apenas informações que possam ser publicadas sobre o evento.</p>
         <form id="agendaForm" class="agenda-form">
           <label>Nome da atividade<input name="activity" maxlength="100" placeholder="Ex.: Encontro comunitário na praça" required></label>
@@ -101,12 +101,13 @@
           <label>Município e UF<input name="city" maxlength="100" placeholder="Ex.: Belo Horizonte — MG" required></label>
           <label>Local público<input name="place" maxlength="160" placeholder="Ex.: Praça da Liberdade" required></label>
           <label>Número estimado de participantes<input name="participants" type="number" min="1" max="100000" step="1" required></label>
-          <label>Seu nome ou apelido · opcional e privado<input name="sender" maxlength="80" autocomplete="off" placeholder="Ex.: R10 de Comercinho"></label>
+          <label>Nome de craque · público e opcional<input name="sender" maxlength="80" autocomplete="off" placeholder="Use aqui o seu nome de craque" aria-describedby="agendaNicknameHelp"><small id="agendaNicknameHelp">Escolha um apelido fictício. Não use nome completo, telefone ou e-mail. Seu apelido aparecerá junto ao evento após a aprovação.</small></label>
           <label class="agenda-wide">Descrição breve<textarea name="description" rows="3" maxlength="500" placeholder="Descreva o encontro. Não inclua nomes, contatos ou dados pessoais de outras pessoas." required></textarea></label>
           <label class="agenda-wide agenda-check"><input type="checkbox" required><span>Entendo que esta é uma simulação e que nenhum dado será salvo. Não incluí informações pessoais de terceiros.</span></label>
           <div class="agenda-wide"><button class="primary-button" type="submit">Simular envio para revisão</button></div>
         </form>
         <p id="agendaFeedback" class="agenda-notice" role="status" hidden></p>
+        <article id="agendaCardPreview" class="agenda-event" hidden aria-label="Prévia do card após aprovação"></article>
       </details>
       <details>
         <summary>Prévia do painel de revisão</summary>
@@ -117,14 +118,14 @@
       (() => {
         const root=document.getElementById('agendaPreview');
         const examples=[
-          {title:'Encontro comunitário na praça',place:'Praça da Liberdade · Belo Horizonte — MG',date:'Exemplo sem data real',count:24,coords:[-19.9318,-43.9378]},
-          {title:'Oficina cultural aberta',place:'Praça da Estação · Belo Horizonte — MG',date:'Exemplo sem data real',count:18,coords:[-19.9165,-43.9345]}
+          {title:'Encontro comunitário na praça',place:'Praça da Liberdade · Belo Horizonte — MG',date:'Exemplo sem data real',count:24,nickname:'Craque visitante',coords:[-19.9318,-43.9378]},
+          {title:'Oficina cultural aberta',place:'Praça da Estação · Belo Horizonte — MG',date:'Exemplo sem data real',count:18,nickname:'Craque da comunidade',coords:[-19.9165,-43.9345]}
         ];
         const list=root.querySelector('#agendaExamples');
         examples.forEach(event=>{
           const card=document.createElement('article');card.className='agenda-event';
           const title=document.createElement('h4');title.textContent=event.title;card.append(title);
-          [event.place,event.date,event.count+' participantes estimados','EXEMPLO FICTÍCIO'].forEach(text=>{const p=document.createElement('p');p.textContent=text;card.append(p)});
+          [event.place,event.date,event.count+' participantes estimados','Registrado por: '+event.nickname+' · apelido fictício','EXEMPLO FICTÍCIO'].forEach(text=>{const p=document.createElement('p');p.textContent=text;card.append(p)});
           list.append(card);
         });
         let agendaMap;
@@ -136,7 +137,7 @@
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(agendaMap);
             examples.forEach(item=>{
               const popup=document.createElement('div');const title=document.createElement('strong');title.textContent=item.title;popup.append(title);
-              const note=document.createElement('p');note.textContent='Exemplo fictício · '+item.count+' participantes estimados';popup.append(note);
+              const note=document.createElement('p');note.textContent='Exemplo fictício · '+item.count+' participantes estimados';popup.append(note); const nickname=document.createElement('p');nickname.textContent='Registrado por: '+item.nickname+' · apelido fictício';popup.append(nickname);
               L.circleMarker(item.coords,{radius:9,color:'#69501f',fillColor:'#efce77',fillOpacity:1,weight:2}).addTo(agendaMap).bindPopup(popup);
             });
           }
@@ -150,6 +151,12 @@
           const feedback=root.querySelector('#agendaFeedback');
           feedback.textContent='Simulação recebida: “'+values.get('activity')+'” — '+values.get('participants')+' participantes estimados. Na versão real, este registro aguardará revisão antes de aparecer no mapa. Nenhum dado foi salvo nesta prévia.';
           feedback.hidden=false;
+          const card=root.querySelector('#agendaCardPreview');
+          card.replaceChildren();
+          const title=document.createElement('h4');title.textContent=values.get('activity');card.append(title);
+          const nickname=String(values.get('sender')||'').trim();
+          ['PRÉVIA DO CARD APÓS APROVAÇÃO · NÃO PUBLICADO',values.get('place')+' · '+values.get('city'),values.get('date'),values.get('participants')+' participantes estimados',nickname?'Registrado por: '+nickname:'Sem apelido informado',values.get('description')].forEach(text=>{const p=document.createElement('p');p.textContent=text;card.append(p)});
+          card.hidden=false;
           form.reset();
         });
         root.querySelectorAll('[data-review]').forEach(button=>button.addEventListener('click',()=>{root.querySelector('#agendaReviewState').textContent='Estado simulado: '+button.dataset.review+'. Nenhum registro real foi alterado.'}));
