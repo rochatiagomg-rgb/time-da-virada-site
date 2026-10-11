@@ -15,7 +15,7 @@
       fonteRodape: 'Fontes: TSE, IBGE e demais bases oficiais indicadas em cada card'
     },
     secoes: {},
-    tseBaseUrl: 'https://raw.githubusercontent.com/rochatiagomg-rgb/time-da-virada-dados/main'
+    tseBaseUrl: '/api/dados'
   };
 
   const cache = new Map();
@@ -84,7 +84,7 @@
 
   async function getTseIndex() {
     if (!tseIndexPromise) {
-      tseIndexPromise = loadConfig().then(cfg => fetchJson(`${String(cfg.tseBaseUrl || FALLBACK_CONFIG.tseBaseUrl).replace(/\/$/, '')}/index.json`));
+      tseIndexPromise = loadConfig().then(cfg => fetchJson(`${String(FALLBACK_CONFIG.tseBaseUrl).replace(/\/$/, '')}/index.json`));
     }
     return tseIndexPromise;
   }
@@ -101,7 +101,7 @@
 
   async function getTsePayload(params) {
     const cfg = await loadConfig();
-    const base = String(cfg.tseBaseUrl || FALLBACK_CONFIG.tseBaseUrl).replace(/\/$/, '');
+    const base = String(FALLBACK_CONFIG.tseBaseUrl).replace(/\/$/, '');
     const ref = await resolveTseMunicipio(params);
     if (!ref) return null;
     const uf = ref.uf.toLowerCase();
