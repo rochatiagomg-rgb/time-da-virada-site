@@ -83,18 +83,18 @@
       </style>
       <div class="agenda-banner">
         <div><div class="eyebrow">AGENDA PÚBLICA · ENCONTROS DA VIRADA</div><h2>Craques em Campo</h2><p class="muted">Cada encontro faz parte da nossa história.</p></div>
-        <span class="agenda-badge">PRÉVIA · DADOS FICTÍCIOS</span>
+        <span class="agenda-badge">EVENTOS PÚBLICOS</span>
       </div>
-      <p class="agenda-notice">A seção já está integrada à preview do site. O registro de eventos ainda está em teste: os envios não são salvos. O mapa mostra exemplos fictícios. O recebimento e a publicação de eventos reais serão habilitados após a configuração do armazenamento e da revisão administrativa.</p>
+      <p class="agenda-notice">Registre um evento público já realizado. Os envios passam pela revisão do responsável antes de aparecer no mapa. Quantidades de participantes são estimativas informadas pelo público.</p>
       <details id="agendaExplore">
-        <summary>Ver mapa e exemplos da agenda</summary>
+        <summary>Ver mapa dos encontros</summary>
         <div class="agenda-layout">
-          <div><h3>Mapa das Participações</h3><div id="agendaMap" class="agenda-map" aria-label="Mapa de eventos fictícios em Belo Horizonte"></div><p class="hint">Pontos dourados: eventos fictícios da demonstração.</p></div>
+          <div><h3>Mapa das Participações</h3><div id="agendaMap" class="agenda-map" aria-label="Mapa dos eventos públicos aprovados"></div><p class="hint">Pontos dourados: eventos aprovados. Ponto azul: local escolhido para seu envio.</p></div>
           <div><h3>Encontros da Virada</h3><div id="agendaExamples"></div><div class="agenda-notice"><strong>Aquecimento</strong><p>Os resultados aparecerão aqui após a revisão dos primeiros registros.</p><small>Sem classificação individual. Quantidades são estimativas de participações, não de pessoas únicas.</small></div></div>
         </div>
       </details>
       <details id="agendaRegister" open>
-        <summary>Registro de craques · experimentar</summary>
+        <summary>Registro de craques</summary>
         <p class="muted">Sem cadastro. Preencha apenas informações que possam ser publicadas sobre o evento.</p>
         <form id="agendaForm" class="agenda-form">
           <label>Nome da atividade<input name="activity" maxlength="100" placeholder="Ex.: Encontro comunitário na praça" required></label>
@@ -102,67 +102,20 @@
           <label>Município e UF<input name="city" maxlength="100" placeholder="Ex.: Belo Horizonte — MG" required></label>
           <label>Local público<input name="place" maxlength="160" placeholder="Ex.: Praça da Liberdade" required></label>
           <label>Número estimado de participantes<input name="participants" type="number" min="1" max="100000" step="1" required></label>
-          <label>Nome de craque · público e opcional<input name="sender" maxlength="80" autocomplete="off" placeholder="Use aqui o seu nome de craque" aria-describedby="agendaNicknameHelp"><small id="agendaNicknameHelp">Escolha um apelido fictício. Não use nome completo, telefone ou e-mail. Seu apelido aparecerá junto ao evento após a aprovação.</small></label>
+          <label>Nome de craque · público e opcional<input name="nickname" maxlength="80" autocomplete="off" placeholder="Use aqui o seu nome de craque" aria-describedby="agendaNicknameHelp"><small id="agendaNicknameHelp">Escolha um apelido fictício. Não use nome completo, telefone ou e-mail. Seu apelido aparecerá junto ao evento após a aprovação.</small></label>
           <label class="agenda-wide">Descrição breve<textarea name="description" rows="3" maxlength="500" placeholder="Descreva o encontro. Não inclua nomes, contatos ou dados pessoais de outras pessoas." required></textarea></label>
-          <label class="agenda-wide agenda-check"><input type="checkbox" required><span>Entendo que esta é uma simulação e que nenhum dado será salvo. Não incluí informações pessoais de terceiros.</span></label>
-          <div class="agenda-wide"><button class="primary-button" type="submit">Simular envio para revisão</button></div>
+          <label class="agenda-wide agenda-check"><input type="checkbox" name="consent" required><span>Li as regras abaixo e autorizo publicar os dados do evento e meu apelido fictício, se informado, após revisão. Não incluí informações pessoais de terceiros.</span></label>
+          <div class="agenda-wide agenda-notice"><strong>Local do encontro</strong><p>Selecione no mapa um local público. Não marque residências nem sua localização pessoal.</p><button id="agendaChooseLocation" class="secondary-button" type="button">Escolher local no mapa</button> <button id="agendaLocate" class="secondary-button" type="button">Centralizar na minha região</button><p id="agendaLocation" role="status">Nenhum local selecionado.</p></div>
+          <label class="agenda-wide agenda-check"><input type="checkbox" name="publicPlace" required><span>Confirmo que o ponto escolhido corresponde a um local público do evento.</span></label>
+          <label style="display:none" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          <div class="agenda-wide" id="agendaProtection"></div>
+          <div class="agenda-wide"><button class="primary-button" type="submit" disabled>Enviar para revisão</button></div>
         </form>
         <p id="agendaFeedback" class="agenda-notice" role="status" hidden></p>
-        <article id="agendaCardPreview" class="agenda-event" hidden aria-label="Prévia do card após aprovação"></article>
+        <details><summary>Regras de participação e publicação</summary><p>Esta agenda reúne eventos públicos de participação cívica, cultural e comunitária. Envie informações verdadeiras sobre eventos já realizados. Não publique dados pessoais de terceiros, endereços privados, conteúdo ofensivo, contatos com eleitores, opiniões políticas de participantes ou relatórios de atuação individual.</p><p>Nome da atividade, descrição, data, município, local público, ponto no mapa, quantidade estimada e apelido fictício opcional serão armazenados para revisão por Tiago Rocha. Somente registros aprovados serão exibidos. O responsável pode ocultar registros abusivos ou incorretos. A agenda não comprova a participação nem contabiliza pessoas únicas.</p><p>Não é necessário fornecer nome real, telefone ou e-mail. A localização do aparelho, quando autorizada, apenas centraliza o mapa. Guarde o protocolo recebido para solicitar uma correção ao responsável.</p></details>
       </details>
-      <details>
-        <summary>Prévia do painel de revisão</summary>
-        <p class="agenda-notice">Este é apenas o modelo do painel. O painel administrativo real será separado e protegido por acesso exclusivo do responsável. Nele você poderá aprovar, ocultar e restaurar registros; eventos pendentes não aparecerão no mapa público.</p>
-        <div class="agenda-event agenda-moderation"><h4>Registro fictício para revisão</h4><p>Oficina de cidadania · Belo Horizonte — MG · 15 participantes estimados</p><p id="agendaReviewState" role="status">Estado: pendente de revisão</p><button type="button" class="secondary-button" data-review="aprovado">Simular aprovação</button><button type="button" class="secondary-button" data-review="oculto">Simular ocultação</button><button type="button" class="secondary-button" data-review="pendente de revisão">Restaurar simulação</button></div>
-      </details>
-      <script>
-      (() => {
-        const root=document.getElementById('agendaPreview');
-        const examples=[
-          {title:'Encontro comunitário na praça',place:'Praça da Liberdade · Belo Horizonte — MG',date:'Exemplo sem data real',count:24,nickname:'Craque visitante',coords:[-19.9318,-43.9378]},
-          {title:'Oficina cultural aberta',place:'Praça da Estação · Belo Horizonte — MG',date:'Exemplo sem data real',count:18,nickname:'Craque da comunidade',coords:[-19.9165,-43.9345]}
-        ];
-        const list=root.querySelector('#agendaExamples');
-        examples.forEach(event=>{
-          const card=document.createElement('article');card.className='agenda-event';
-          const title=document.createElement('h4');title.textContent=event.title;card.append(title);
-          [event.place,event.date,event.count+' participantes estimados','Registrado por: '+event.nickname+' · apelido fictício','EXEMPLO FICTÍCIO'].forEach(text=>{const p=document.createElement('p');p.textContent=text;card.append(p)});
-          list.append(card);
-        });
-        let agendaMap;
-        root.querySelector('#agendaExplore').addEventListener('toggle',event=>{
-          if(!event.target.open)return;
-          if(!window.L){root.querySelector('#agendaMap').textContent='Mapa indisponível no momento. Os exemplos continuam disponíveis ao lado.';return;}
-          if(!agendaMap){
-            agendaMap=L.map('agendaMap').setView([-19.924,-43.936],14);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(agendaMap);
-            examples.forEach(item=>{
-              const popup=document.createElement('div');const title=document.createElement('strong');title.textContent=item.title;popup.append(title);
-              const note=document.createElement('p');note.textContent='Exemplo fictício · '+item.count+' participantes estimados';popup.append(note); const nickname=document.createElement('p');nickname.textContent='Registrado por: '+item.nickname+' · apelido fictício';popup.append(nickname);
-              L.circleMarker(item.coords,{radius:9,color:'#69501f',fillColor:'#efce77',fillOpacity:1,weight:2}).addTo(agendaMap).bindPopup(popup);
-            });
-          }
-          requestAnimationFrame(()=>agendaMap.invalidateSize());
-        });
-        root.querySelector('#agendaForm').addEventListener('submit',event=>{
-          event.preventDefault();
-          const form=event.target;
-          if(!form.reportValidity())return;
-          const values=new FormData(form);
-          const feedback=root.querySelector('#agendaFeedback');
-          feedback.textContent='Simulação recebida: “'+values.get('activity')+'” — '+values.get('participants')+' participantes estimados. Na versão real, este registro aguardará revisão antes de aparecer no mapa. Nenhum dado foi salvo nesta prévia.';
-          feedback.hidden=false;
-          const card=root.querySelector('#agendaCardPreview');
-          card.replaceChildren();
-          const title=document.createElement('h4');title.textContent=values.get('activity');card.append(title);
-          const nickname=String(values.get('sender')||'').trim();
-          ['PRÉVIA DO CARD APÓS APROVAÇÃO · NÃO PUBLICADO',values.get('place')+' · '+values.get('city'),values.get('date'),values.get('participants')+' participantes estimados',nickname?'Registrado por: '+nickname:'Sem apelido informado',values.get('description')].forEach(text=>{const p=document.createElement('p');p.textContent=text;card.append(p)});
-          card.hidden=false;
-          form.reset();
-        });
-        root.querySelectorAll('[data-review]').forEach(button=>button.addEventListener('click',()=>{root.querySelector('#agendaReviewState').textContent='Estado simulado: '+button.dataset.review+'. Nenhum registro real foi alterado.'}));
-      })();
-      </script>
+      <p class="hint"><a href="/admin-agenda/">Acesso do responsável</a></p>
+      <script src="./agenda.js" defer></script>
     </section>
 
     <div id="content" class="stack hidden">
