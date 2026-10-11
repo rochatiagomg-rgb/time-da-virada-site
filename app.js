@@ -109,6 +109,7 @@ function renderSuggestions(items){
 }
 
 function selectMunicipio(m){
+  $('agendaSection').open=false;
   state.selected=m;
   state.dashboard=null;
   state.ibgePayload=null;
