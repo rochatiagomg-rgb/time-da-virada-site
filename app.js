@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init(){
   prepareCompactSections();
+  setupExpandHints();
   $('municipioInput').addEventListener('input', handleSearch);
   $('fontesBtn').addEventListener('click', () => $('fontesContent').classList.toggle('hidden'));
   $('outrosTemasBtn').addEventListener('click', togglePlanos);
@@ -70,6 +71,30 @@ function prepareCompactSections(){
     [...section.childNodes].forEach(node=>details.append(node));section.append(details);
     details.addEventListener('toggle',()=>{if(details.open && id==='secMapa')requestAnimationFrame(()=>state.map?.invalidateSize());});
   });
+}
+
+
+let expandHintTimer;
+function pulseExpandHint(){
+  document.querySelectorAll('.expansion-halo').forEach(el=>el.classList.remove('expansion-halo'));
+  clearTimeout(expandHintTimer);
+  const target=document.querySelector('#content:not(.hidden) .municipal-disclosure:not([open])>summary')||document.querySelector('#agendaSection:not([open])>summary')||document.querySelector('#agendaRegister:not([open])>summary');
+  if(!target)return;
+  target.classList.add('expansion-halo');
+  expandHintTimer=setTimeout(()=>target.classList.remove('expansion-halo'),5000);
+}
+function setupExpandHints(){
+  document.querySelectorAll('.municipal-disclosure,#agendaSection,#agendaRegister,#agendaExplore').forEach(details=>{
+    const summary=details.querySelector(':scope>summary');summary.classList.add('expand-cue');
+    const label=document.createElement('span');label.className='expand-action';
+    summary.append(label);
+    const update=()=>label.textContent=details.open?'Recolher':window.matchMedia('(max-width:720px)').matches?'Toque para abrir':'Clique para abrir';
+    update();details.addEventListener('toggle',()=>{
+      update();
+      if(details.open){clearTimeout(expandHintTimer);document.querySelectorAll('.expansion-halo').forEach(el=>el.classList.remove('expansion-halo'));}
+    });
+  });
+  pulseExpandHint();
 }
 
 function setCraques(n){
@@ -140,6 +165,7 @@ function selectMunicipio(m){
   $('municipioNome').textContent=`${m.nome} — ${m.uf}`;
   $('localTag').textContent=m.uf;
   $('content').classList.remove('hidden');
+  pulseExpandHint();
   $('miniMap').innerHTML='<div class="map-placeholder">Carregando mapa...</div>';
   $('indicadoresResumo').innerHTML='<div class="empty-state">Consultando indicadores do IBGE em segundo plano...</div>';
   $('cardsContent').innerHTML='<div class="empty-state">Consultando dados municipais em segundo plano...</div>';
