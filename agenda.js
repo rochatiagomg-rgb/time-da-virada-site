@@ -4,6 +4,22 @@
   const form=root.querySelector('#agendaForm'),feedback=root.querySelector('#agendaFeedback'),list=root.querySelector('#agendaExamples'),submit=form.querySelector('button[type="submit"]');
   let map,selectedMarker,selectedLocation,events=[],config,widget,turnstileToken='';
   const markers=[];
+  let municipalityGeo=null;
+  function centerMunicipality(){
+    if(!map||!municipalityGeo)return;
+    try{
+      const bounds=L.geoJSON(municipalityGeo).getBounds();
+      if(bounds.isValid()){map.invalidateSize();map.fitBounds(bounds,{padding:[18,18],maxZoom:12});}
+    }catch{}
+  }
+  document.addEventListener('tdv:municipality',event=>{
+    municipalityGeo=event.detail.geo||null;
+    root.querySelector('#agendaMap').setAttribute('aria-label','Mapa dos eventos públicos aprovados — '+event.detail.name+' / '+event.detail.uf);
+    if(municipalityGeo)centerMunicipality();
+  });
+  root.querySelector('#agendaSection').addEventListener('toggle',event=>{
+    if(event.target.open&&map)requestAnimationFrame(()=>{map.invalidateSize();centerMunicipality();});
+  });
   const notice=(message)=>{feedback.textContent=message;feedback.hidden=false};
   function paragraph(parent,text){const p=document.createElement('p');p.textContent=text;parent.append(p)}
   function renderEvents(){
@@ -31,7 +47,7 @@
     });
   }
   function ensureMap(){
-    if(map){requestAnimationFrame(()=>map.invalidateSize());return}
+    if(map){requestAnimationFrame(()=>{map.invalidateSize();centerMunicipality();});return}
     if(!window.L){root.querySelector('#agendaMap').textContent='Mapa indisponível. Tente recarregar a página.';return}
     map=L.map('agendaMap').setView([-15.78,-47.93],4);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
@@ -42,7 +58,7 @@
       selectedMarker=L.circleMarker(event.latlng,{radius:11,color:'#fff',fillColor:'#6da6ff',fillOpacity:1,weight:3}).addTo(map);
       root.querySelector('#agendaLocation').textContent='Local selecionado: '+selectedLocation.lat.toFixed(4)+', '+selectedLocation.lng.toFixed(4)+'. Confira se corresponde ao local público do evento.';
     });
-    renderEvents();requestAnimationFrame(()=>map.invalidateSize());
+    renderEvents();requestAnimationFrame(()=>{map.invalidateSize();centerMunicipality();});
   }
   root.querySelector('#agendaExplore').addEventListener('toggle',event=>{if(event.target.open)ensureMap()});
   root.querySelector('#agendaChooseLocation').addEventListener('click',()=>{

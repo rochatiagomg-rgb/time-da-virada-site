@@ -22,6 +22,7 @@ const $ = id => document.getElementById(id);
 document.addEventListener('DOMContentLoaded', init);
 
 function init(){
+  prepareCompactSections();
   $('municipioInput').addEventListener('input', handleSearch);
   $('fontesBtn').addEventListener('click', () => $('fontesContent').classList.toggle('hidden'));
   $('outrosTemasBtn').addEventListener('click', togglePlanos);
@@ -39,7 +40,7 @@ function init(){
       $('slogan').textContent = data.app.slogan || '';
       $('creditoApp').textContent = data.app.credito || '';
       $('fonteRodape').textContent = data.app.fonteRodape || '';
-      setCraques(data.craques || 0);
+      if(data.craques!=null)setCraques(data.craques);
       applySectionLabels(data.secoes || {});
       registrarSessao();
       setLoading(false);
@@ -49,23 +50,32 @@ function init(){
 }
 
 function registrarSessao(){
-  const key = 'tdv_session_v1';
-  const now = Date.now();
-  let obj = null;
-  try { obj = JSON.parse(localStorage.getItem(key) || 'null'); } catch(e){}
-  if(!obj || !obj.id || !obj.created || now - obj.created > 21600000){
-    obj = { id: 's_' + now.toString(36) + '_' + Math.random().toString(36).slice(2,12), created: now };
-    localStorage.setItem(key, JSON.stringify(obj));
-  }
   google.script.run.withSuccessHandler(r => {
     if(r && typeof r.total !== 'undefined') setCraques(r.total);
-  }).registrarAcesso(obj.id, {});
+  }).withFailureHandler(() => {
+    $('craquesCount').textContent='—';
+    $('craquesCount').title='Contador temporariamente indisponível';
+  }).registrarAcesso();
+}
+
+function prepareCompactSections(){
+  const mobile=window.matchMedia('(max-width:720px)').matches;
+  ['secPlacar','secOnde','secMapa','secRetrospecto','secJogoPolitico','secPlano','secLimites'].forEach(id=>{
+    const heading=$(id).closest('.section-heading'),section=heading.parentElement;
+    const details=document.createElement('details');details.className='municipal-disclosure';details.open=!mobile;
+    const summary=document.createElement('summary');summary.append(heading);
+    const hint=document.createElement('small');hint.className='disclosure-hint';
+    const hints={secPlacar:'Resultado completo',secOnde:'Consultar locais de votação',secMapa:'Explorar o mapa',secRetrospecto:'Ver fatos e fontes',secJogoPolitico:'Consultar propostas',secPlano:'Links e resumo em PDF',secLimites:'Fontes e metodologia'};
+    hint.textContent=hints[id];summary.append(hint);details.append(summary);
+    [...section.childNodes].forEach(node=>details.append(node));section.append(details);
+    details.addEventListener('toggle',()=>{if(details.open && id==='secMapa')requestAnimationFrame(()=>state.map?.invalidateSize());});
+  });
 }
 
 function setCraques(n){
   const v = Number(n||0).toLocaleString('pt-BR');
   $('craquesCount').textContent = v;
-  $('craquesBig').textContent = v;
+  $('craquesCount').removeAttribute('title');
 }
 
 function applySectionLabels(s){
@@ -115,6 +125,7 @@ function selectMunicipio(m){
   state.ibgePayload=null;
   state.geo=null;
   state.geoError=false;
+  document.dispatchEvent(new CustomEvent('tdv:municipality',{detail:{name:m.nome,uf:m.uf}}));
   state.showAllPlans=false;
   state.placeQuery='';
   state.placeLimit=40;
@@ -188,8 +199,10 @@ function selectMunicipio(m){
   // A malha é outra chamada independente.
   google.script.run
     .withSuccessHandler(geo=>{
+      if(state.selected?.id!==m.id)return;
       state.geo=geo;
       state.geoError=!geo;
+      document.dispatchEvent(new CustomEvent('tdv:municipality',{detail:{name:m.nome,uf:m.uf,geo}}));
       renderMapSafe();
     })
     .withFailureHandler(err=>{
@@ -203,6 +216,8 @@ function selectMunicipio(m){
 
 function renderDashboard(data){
   const e=data.eleitoral||{};
+  const overview=$('municipioOverview');
+  if(overview)overview.textContent=e.status==='ok'?`${fmtInt(e.eleitorado)} eleitores · ${fmtInt(e.comparecimento)} compareceram · ${fmtInt(e.votosValidos)} votos válidos`:'';
   $('municipioResumo').textContent=e.status==='ok'
     ? 'Resultado oficial do 1º turno carregado do TSE.'
     : 'Município selecionado. Algumas camadas ainda podem estar em integração.';
@@ -972,6 +987,7 @@ function buildPdfExportNode(){
   const content=$('content').cloneNode(true);
   const foot=document.querySelector('.footer').cloneNode(true);
   content.classList.remove('hidden');
+  content.querySelectorAll('.municipal-disclosure').forEach(d=>d.open=true);
 
   [...content.querySelectorAll('.no-export,button,input,.place-search-wrap')].forEach(x=>x.remove());
 

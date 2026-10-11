@@ -7,7 +7,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=compact-20261011">
 </head>
 <body>
   <div id="loading" class="loading show">
@@ -31,7 +31,7 @@
       </div>
       <div class="craques-mini">
         <span>★</span>
-        <div><b id="craquesCount">0</b><small>craques</small></div>
+        <div><b id="craquesCount">—</b><small>Número de craques que acessaram a plataforma</small></div>
       </div>
     </div>
   </header>
@@ -47,13 +47,6 @@
             <div id="suggestions" class="suggestions"></div>
           </div>
           <p class="hint">A consulta reúne resultado eleitoral, locais de votação, mapa, diagnóstico, propostas e retrospecto.</p>
-        </div>
-        <div class="craques-card">
-          <div class="craques-star">★</div>
-          <div>
-            <strong id="craquesBig">0</strong>
-            <span>Número de craques que acessaram a plataforma</span>
-          </div>
         </div>
       </div>
     </section>
@@ -97,7 +90,7 @@
           <div><h3>Encontros da Virada</h3><div id="agendaExamples"></div><div class="agenda-notice"><strong>Aquecimento</strong><p>Os resultados aparecerão aqui após a revisão dos primeiros registros.</p><small>Sem classificação individual. Quantidades são estimativas de participações, não de pessoas únicas.</small></div></div>
         </div>
       </details>
-      <details id="agendaRegister" open>
+      <details id="agendaRegister">
         <summary>Registro de craques</summary>
         <p class="muted">Sem cadastro. Preencha apenas informações que possam ser publicadas sobre o evento.</p>
         <form id="agendaForm" class="agenda-form">
@@ -120,7 +113,7 @@
       </details>
       <p class="hint"><a href="/admin-agenda/">Acesso do responsável</a></p>
       </details>
-      <script src="./agenda.js" defer></script>
+      <script src="./agenda.js?v=compact-20261011" defer></script>
     </section>
 
     <div id="content" class="stack hidden">
@@ -130,6 +123,7 @@
           <span class="pill" id="localTag"></span>
         </div>
         <h3 id="municipioNome" class="municipio-title"></h3>
+        <p id="municipioOverview" class="municipio-overview"></p>
         <p id="municipioResumo" class="muted">Carregando leitura territorial...</p>
       </section>
 
@@ -194,7 +188,7 @@
     <div id="fonteRodape">Fontes: TSE, IBGE e demais bases oficiais indicadas em cada card</div>
   </footer>
 
-  <script src="./api-adapter.js"></script>
-  <script src="./app.js?v=agenda-collapse-20261011"></script>
+  <script src="./api-adapter.js?v=compact-20261011"></script>
+  <script src="./app.js?v=compact-20261011"></script>
 </body>
 </html>
