@@ -385,3 +385,21 @@ button,a,summary{transition:background-color .15s,border-color .15s}
  #agendaPreview .agenda-banner h2{font-size:22px}
  #agendaPreview .agenda-badge{font-size:10px;padding:5px 8px}
 }
+
+/* Clear disclosure controls, with a short optional motion hint. */
+.expand-action{display:inline-block;padding:6px 11px;border:1px solid #b99b53;border-radius:999px;color:#f7db91;background:#2b3221;font-size:12px;font-weight:700;line-height:1.4}
+.municipal-disclosure>summary:after{width:30px;height:30px;text-align:center;line-height:28px;border:1px solid #b99b53;border-radius:50%;background:#2b3221}
+.expand-cue:focus-visible{outline:3px solid #efce77;outline-offset:6px;border-radius:8px}
+.expansion-halo .expand-action{animation:expand-halo 1.25s ease-out 4}
+@keyframes expand-halo{0%{box-shadow:0 0 0 0 rgba(239,206,119,.65)}100%{box-shadow:0 0 0 13px rgba(239,206,119,0)}}
+#agendaPreview .agenda-nickname{padding:14px;background:#243528;border:1px solid #8c794b;border-radius:12px;font-weight:700;color:#efce77}
+#agendaPreview .agenda-nickname small{font-weight:400;color:#c6d5cb}
+#agendaPreview .agenda-map-choice{padding:0}
+#agendaPreview .agenda-map-choice p{margin:8px 0;color:#c6d5cb;font-size:13px}
+#agendaPreview .agenda-success{border:1px solid #81b58a;background:#183e2a;border-radius:16px;padding:24px;margin:18px 0}
+#agendaPreview .agenda-success h3{color:#efce77;margin-top:0}
+#agendaPreview .agenda-success p{line-height:1.5}
+#agendaPreview .agenda-protocol strong{display:block;overflow-wrap:anywhere;font-size:13px;margin-top:6px}
+#agendaPreview [hidden]{display:none!important}
+.pdf-export-root .expand-action{display:none}
+@media(prefers-reduced-motion:reduce){.expansion-halo .expand-action{animation:none}}
