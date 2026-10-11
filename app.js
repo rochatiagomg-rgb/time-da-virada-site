@@ -94,7 +94,7 @@ function setupExpandHints(){
       if(details.open){clearTimeout(expandHintTimer);document.querySelectorAll('.expansion-halo').forEach(el=>el.classList.remove('expansion-halo'));}
     });
   });
-  pulseExpandHint();
+  requestAnimationFrame(pulseExpandHint);
 }
 
 function setCraques(n){
@@ -165,7 +165,6 @@ function selectMunicipio(m){
   $('municipioNome').textContent=`${m.nome} — ${m.uf}`;
   $('localTag').textContent=m.uf;
   $('content').classList.remove('hidden');
-  pulseExpandHint();
   $('miniMap').innerHTML='<div class="map-placeholder">Carregando mapa...</div>';
   $('indicadoresResumo').innerHTML='<div class="empty-state">Consultando indicadores do IBGE em segundo plano...</div>';
   $('cardsContent').innerHTML='<div class="empty-state">Consultando dados municipais em segundo plano...</div>';
@@ -190,6 +189,7 @@ function selectMunicipio(m){
       }finally{
         // O mapa e o IBGE nunca podem manter a tela presa no loading.
         setLoading(false);
+        requestAnimationFrame(pulseExpandHint);
       }
 
       renderMapSafe();
