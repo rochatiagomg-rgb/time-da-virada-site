@@ -282,11 +282,12 @@
   const methods = {
     async getBootstrap(){
       const [cfg, municipios] = await Promise.all([loadConfig(), getMunicipiosCompact()]);
-      return { app:cfg.app||FALLBACK_CONFIG.app, visual:{fundo:'#FFFFFF',verde:'#0B6B3A',amarelo:'#F2B705',vermelho:'#D62828'}, secoes:cfg.secoes||{}, municipios, craques:Number(localStorage.getItem('tdv_craques_preview')||0), planilhaConfigurada:true };
+      return { app:cfg.app||FALLBACK_CONFIG.app, visual:{fundo:'#FFFFFF',verde:'#0B6B3A',amarelo:'#F2B705',vermelho:'#D62828'}, secoes:cfg.secoes||{}, municipios, craques:null, planilhaConfigurada:true };
     },
     async registrarAcesso(){
-      // Contador real será migrado depois para uma função mínima do Cloudflare.
-      let n=Number(localStorage.getItem('tdv_craques_preview')||0); if(!n){n=1; localStorage.setItem('tdv_craques_preview','1');} return {total:n,registrado:false};
+      const response=await fetch('/api/agenda/counter',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}',cache:'no-store'});
+      if(!response.ok)throw new Error('Contador temporariamente indisponível.');
+      return response.json();
     },
     async getDashboardMunicipio(params){
       const [info, content] = await Promise.all([getTsePayload(params), loadContent()]);
