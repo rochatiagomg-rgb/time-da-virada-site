@@ -53,6 +53,14 @@ export async function onRequest({request,env}){
     if(request.method!=='GET'&&request.headers.get('Origin')!==new URL(request.url).origin)fault('Origem do envio não autorizada.',403);
     if(route==='/api/agenda/config'&&request.method==='GET')return reply({enabled:!!env.AGENDA_DB&&env.AGENDA_ENABLED==='true'&&!!env.TURNSTILE_SECRET&&!!env.TURNSTILE_SITE_KEY&&!!env.AGENDA_RATE_SECRET&&!!env.ACCESS_TEAM_DOMAIN&&!!env.ACCESS_AUD&&!!env.ADMIN_EMAIL,siteKey:env.TURNSTILE_SITE_KEY||''});
     if(!env.AGENDA_DB||env.AGENDA_ENABLED!=='true')fault('A agenda está temporariamente indisponível. A consulta do site continua funcionando.',503);
+    // Aggregate accesses only: no visitor identifiers or personal data.
+    if(route==='/api/agenda/counter' && ['GET','POST'].includes(request.method)){
+      const bucket='site-access-total-v1';
+      const row=request.method==='POST'
+        ? await env.AGENDA_DB.prepare('INSERT INTO agenda_rate (bucket,attempts,expires_at) VALUES (?,1,?) ON CONFLICT(bucket) DO UPDATE SET attempts=attempts+1 RETURNING attempts').bind(bucket,253402300799000).first()
+        : await env.AGENDA_DB.prepare('SELECT attempts FROM agenda_rate WHERE bucket=?').bind(bucket).first();
+      return reply({total:Number(row?.attempts||0),registrado:request.method==='POST'});
+    }
     if(route==='/api/agenda/events'&&request.method==='GET'){
       const {results}=await env.AGENDA_DB.prepare('SELECT '+columns+" FROM agenda_events WHERE status='approved' ORDER BY event_date DESC, created_at DESC LIMIT 200").all();
       return reply({events:results});
