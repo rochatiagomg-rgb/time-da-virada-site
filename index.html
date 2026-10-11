@@ -81,10 +81,11 @@
         #agendaPreview .agenda-moderation button{margin:6px 8px 6px 0}
         @media(max-width:720px){#agendaPreview .agenda-layout,#agendaPreview .agenda-form{grid-template-columns:1fr}#agendaPreview .agenda-map{height:300px}}
       </style>
-      <div class="agenda-banner">
+      <details id="agendaSection" open>
+      <summary class="agenda-banner">
         <div><div class="eyebrow">AGENDA PÚBLICA · ENCONTROS DA VIRADA</div><h2>Craques em Campo</h2><p class="muted">Cada encontro faz parte da nossa história.</p></div>
-        <span class="agenda-badge">EVENTOS PÚBLICOS</span>
-      </div>
+        <span class="agenda-badge">EVENTOS PÚBLICOS · ABRIR / RECOLHER</span>
+      </summary>
       <p class="agenda-notice">Registre um evento público já realizado. Os envios passam pela revisão do responsável antes de aparecer no mapa. Quantidades de participantes são estimativas informadas pelo público.</p>
       <details id="agendaExplore">
         <summary>Ver mapa dos encontros</summary>
@@ -115,6 +116,7 @@
         <details><summary>Regras de participação e publicação</summary><p>Esta agenda reúne eventos públicos de participação cívica, cultural e comunitária. Envie informações verdadeiras sobre eventos já realizados. Não publique dados pessoais de terceiros, endereços privados, conteúdo ofensivo, contatos com eleitores, opiniões políticas de participantes ou relatórios de atuação individual.</p><p>Nome da atividade, descrição, data, município, local público, ponto no mapa, quantidade estimada e apelido fictício opcional serão armazenados para revisão por Tiago Rocha. Somente registros aprovados serão exibidos. O responsável pode ocultar registros abusivos ou incorretos. A agenda não comprova a participação nem contabiliza pessoas únicas.</p><p>Não é necessário fornecer nome real, telefone ou e-mail. A localização do aparelho, quando autorizada, apenas centraliza o mapa. Guarde o protocolo recebido para solicitar uma correção ao responsável.</p></details>
       </details>
       <p class="hint"><a href="/admin-agenda/">Acesso do responsável</a></p>
+      </details>
       <script src="./agenda.js" defer></script>
     </section>
 
